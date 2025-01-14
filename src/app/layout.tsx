@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar/navbar";
 import Footer from "@/components/Footer/footer";
+import SpeedDial from "@/components/SpeedDial/speed-dial";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} font-sans`}>
         <NavBar />
         <main className="min-h-screen">{children}</main>
+        <SpeedDial />
         <Footer />
       </body>
     </html>
