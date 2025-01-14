@@ -6,12 +6,12 @@ interface NavItems {
 export const navItems: NavItems[] = [
   {
     id: 1,
-    item: "Anime",
+    item: "Animes",
   },
 
   {
     id: 2,
-    item: "Manga",
+    item: "Mangas",
   },
 
   {

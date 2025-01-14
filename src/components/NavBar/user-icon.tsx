@@ -14,15 +14,15 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { PersonIcon } from "@radix-ui/react-icons";
 
 import { SunIcon, MoonIcon, ShadowIcon } from "@radix-ui/react-icons";
+import UserPicture from "../User/user-picture";
 
 const UserIcon = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <PersonIcon width={32} height={32} cursor={"pointer"} />
+        <UserPicture />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -42,17 +42,17 @@ const UserIcon = () => {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <ShadowIcon />
-              <Button variant={"secondary"}>Theme</Button>
+              <Button variant={"ghost"}>Theme</Button>
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuItem>
                   <SunIcon />
-                  <Button variant={"secondary"}>Light</Button>
+                  <Button variant={"ghost"}>Light</Button>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <MoonIcon />
-                  <Button variant={"secondary"}>Dark</Button>
+                  <Button variant={"ghost"}>Dark</Button>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
               </DropdownMenuSubContent>
