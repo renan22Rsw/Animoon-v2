@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/Footer/social.jsx"
+    "src/components/Footer/social.jsx",
+    "hooks/useMediaQuery.jsx"
   ],
   "exclude": ["node_modules"]
 }

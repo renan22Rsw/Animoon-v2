@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useMediaQuery } from "../../../../hooks/useMediaQuery";
 
 const SearchContents = () => {
   const animeList = [
@@ -31,10 +34,20 @@ const SearchContents = () => {
       title: "Re:Zero",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
     },
+
+    {
+      id: 6,
+      title: "Re:Zero",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
+    },
   ];
 
+  const isMobile = useMediaQuery("(max-width: 640px)") ? null : animeList.pop();
+
   return (
-    <section className="grid grid-cols-3 bg-red-500 py-2 sm:grid-cols-5 lg:px-12">
+    <section
+      className={`lg:px-12" grid ${isMobile ? "grid-cols-5" : "grid-cols-3"} bg-red-500 py-2`}
+    >
       {animeList.map((anime) => (
         <div key={anime.id} className="px-2">
           <Image
@@ -44,7 +57,7 @@ const SearchContents = () => {
             height={150}
             className="cursor-pointer rounded-md"
           />
-          <h3 className="max-w-[150px] text-sm font-semibold text-foreground">
+          <h3 className="max-w-[150px] py-2 text-sm font-semibold text-foreground">
             {anime.title}
           </h3>
         </div>
