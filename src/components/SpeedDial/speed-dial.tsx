@@ -24,7 +24,7 @@ const SpeedDial = () => {
   return (
     <div className="relative">
       <DropdownMenu>
-        <div className="absolute bottom-20 right-0 m-4 lg:hidden">
+        <div className="fixed bottom-5 right-0 m-4 lg:hidden">
           <DropdownMenuTrigger asChild>
             <Button variant={"secondary"}>
               <MenuIcon width={36} height={36} />

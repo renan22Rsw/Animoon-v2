@@ -57,7 +57,7 @@ const SearchContents = () => {
             height={150}
             className="cursor-pointer rounded-md"
           />
-          <h3 className="max-w-[150px] py-2 text-sm font-semibold text-foreground">
+          <h3 className="mr-2 max-w-[150px] space-x-4 px-2 py-2 text-sm font-semibold">
             {anime.title}
           </h3>
         </div>
