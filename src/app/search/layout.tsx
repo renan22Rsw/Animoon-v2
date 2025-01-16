@@ -6,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="mx-auto my-20 max-w-[1200px] space-y-20 lg:space-y-10">
+    <main className="mx-auto my-20 max-w-[1200px] space-y-10 lg:space-y-8">
       <InputSearch />
       {children}
     </main>
