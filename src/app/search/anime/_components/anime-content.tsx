@@ -6,7 +6,7 @@ import SearchContents from "../../_components/search-contents";
 import SearchTitle from "../../_components/title";
 
 const AnimeContent = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   return (
     <>
