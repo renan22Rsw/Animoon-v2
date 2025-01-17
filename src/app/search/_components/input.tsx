@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import SelectGenres from "./select";
 
 const InputSearch = () => {
   return (
@@ -12,9 +13,10 @@ const InputSearch = () => {
         />
         <Input
           placeholder="Search..."
-          className="w-[400px] px-6 placeholder:italic"
+          className="w-[150px] px-6 placeholder:italic sm:w-[250px] md:w-[300px]"
         />
       </div>
+      <SelectGenres />
     </div>
   );
 };
