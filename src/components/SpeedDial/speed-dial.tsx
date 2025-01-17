@@ -19,6 +19,7 @@ import {
 
 import AnimoonIcon from "@/../public/icon.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const SpeedDial = () => {
   return (
@@ -40,28 +41,36 @@ const SpeedDial = () => {
               alt="Animoon-icon"
               className="mr-2"
             />
-            Animoon
+            <Link href={"/"}>Animoon</Link>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <PlayIcon />
-              <Button variant={"link"}>Animes</Button>
+              <Button variant={"link"}>
+                <Link href={"/search/anime"}>Animes</Link>
+              </Button>
             </DropdownMenuItem>
             <DropdownMenuItem>
               <BookOpenIcon />
-              <Button variant={"link"}>Mangas</Button>
+              <Button variant={"link"}>
+                <Link href={"/search/manga"}>Mangas</Link>
+              </Button>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <UsersRoundIcon />
-              <Button variant={"link"}>Characters</Button>
+              <Button variant={"link"}>
+                <Link href={"/search/character"}>Characters</Link>
+              </Button>
             </DropdownMenuItem>
             <DropdownMenuItem>
               <UserRoundIcon />
-              <Button variant={"link"}>Staffs</Button>
+              <Button variant={"link"}>
+                <Link href={"/search/staff"}>Staffs</Link>
+              </Button>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
