@@ -14,7 +14,7 @@ const NotFoundPage = () => {
           {" "}
           <Button
             variant={"link"}
-            className="bg-primary-foreground font-semibold"
+            className="bg-foreground font-semibold text-primary-foreground"
           >
             Go back
           </Button>

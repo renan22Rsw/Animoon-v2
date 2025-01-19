@@ -46,7 +46,7 @@ const SearchContents = () => {
 
   return (
     <section
-      className={`lg:px-12" grid ${isMobile ? "grid-cols-5" : "grid-cols-3"} bg-red-500 py-2`}
+      className={`lg:px-12" grid ${isMobile ? "grid-cols-5" : "grid-cols-3"} py-2`}
     >
       {animeList.map((anime) => (
         <div key={anime.id} className="px-2">

@@ -27,9 +27,9 @@ const columsInfo: ColumsInfoTyped[] = [
 
 const SearchColumns = () => {
   return (
-    <section className="flex">
+    <section className="flex justify-center">
       <h3 className="mr-4 text-lg font-bold text-foreground">#1</h3>
-      <div className="flex w-full cursor-pointer rounded-sm bg-yellow-400">
+      <div className="w- flex w-4/5 cursor-pointer items-center rounded-sm bg-[#EBF0F4] dark:bg-primary-foreground">
         <div className="flex w-full space-y-4 rounded-sm text-foreground">
           <Image
             src={
