@@ -3,6 +3,7 @@ import Container from "@/components/Container/Container";
 import GridContainer from "@/components/GridContainer/grid-container";
 import Header from "@/components/Header/header";
 import InfoColumns from "@/components/InfoColumns/info-columns";
+import Recomendations from "@/components/Recomendations/recomendations";
 import StaffContent from "@/components/StaffContent/staff-content";
 import SubTitle from "@/components/SubTitle/sub-title";
 import Trailer from "@/components/Trailer/trailer";
@@ -38,6 +39,7 @@ const AnimePageId = ({ params }: AnimePageIdProps) => {
           </GridContainer>
           <SubTitle title="Trailer" />
           <Trailer />
+          <Recomendations />
         </Container>
       </div>
     </>
