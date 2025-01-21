@@ -8,7 +8,7 @@ const Header = () => {
   const isMobile = useMediaQuery("(max-width: 640px)");
 
   return (
-    <section className="relative mx-auto flex h-[500px] flex-col items-center">
+    <section className="relative mx-auto flex h-[600px] flex-col items-center bg-red-400">
       <div className="flex w-full justify-center bg-black">
         <Image
           src={

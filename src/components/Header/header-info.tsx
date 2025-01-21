@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 export const HeaderInfo = () => {
   return (
-    <div className="absolute bottom-10 mx-auto flex max-w-[1200px] justify-center">
+    <div className="absolute bottom-10 mx-auto flex justify-center xl:w-[88%] 2xl:w-3/5">
       <div className="mx-6 space-y-4">
         <Image
           src={
@@ -18,7 +18,7 @@ export const HeaderInfo = () => {
         </Button>
       </div>
       <div className="mx-3 flex w-full flex-col justify-center space-y-4">
-        <h2 className="pt-4 text-start">Death Note</h2>
+        <h2 className="pt-4 text-start font-bold">Death Note</h2>
         <p>
           Light Yagami is a genius high school student who is about to learn
           about life through a book of death. When a bored shinigami, a God of
@@ -47,7 +47,7 @@ export const HeaderInfoMobile = () => {
         />
         <h2 className="font-bold">Death Note</h2>
         <Button variant={"outline"}>Add List</Button>
-        <div className="mx-4 rounded-md bg-[#EBF0F4] p-1 dark:bg-primary-foreground">
+        <div className="mx-4 rounded-md p-1 dark:bg-primary-foreground">
           <p className="text-center text-sm">
             Light Yagami is a genius high school student who is about to learn
             about life through a book of death. When a bored shinigami, a God of
