@@ -16,7 +16,7 @@ const RecomendationsMobile = () => {
         opts={{
           align: "start",
         }}
-        className="bg-green-400 sm:hidden"
+        className="bg-[#EBF0F4] p-2 dark:bg-primary-foreground sm:hidden"
       >
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (

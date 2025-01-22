@@ -1,5 +1,5 @@
 const Container = ({ children }: { children: React.ReactNode }) => {
-  return <main className="mx-auto w-full bg-pink-500">{children}</main>;
+  return <div className="flex">{children}</div>;
 };
 
 export default Container;

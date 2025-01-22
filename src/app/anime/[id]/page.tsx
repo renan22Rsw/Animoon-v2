@@ -1,5 +1,5 @@
 import CharacterContent from "@/components/CharacterContent/character-content";
-import Container from "@/components/Container/Container";
+
 import GridContainer from "@/components/GridContainer/grid-container";
 import Header from "@/components/Header/header";
 import InfoColumns from "@/components/InfoColumns/info-columns";
@@ -7,6 +7,8 @@ import Recomendations from "@/components/Recomendations/recomendations";
 import StaffContent from "@/components/StaffContent/staff-content";
 import SubTitle from "@/components/SubTitle/sub-title";
 import Trailer from "@/components/Trailer/trailer";
+import SubContainer from "@/components/SubContainer/sub-container";
+import Container from "@/components/Container/container";
 
 interface AnimePageIdProps {
   params: {
@@ -18,9 +20,11 @@ const AnimePageId = ({ params }: AnimePageIdProps) => {
   return (
     <>
       <Header />
-      <div className="flex">
+
+      <Container>
         <InfoColumns />
-        <Container>
+
+        <SubContainer>
           <SubTitle title="Characters" />
           <GridContainer>
             <CharacterContent />
@@ -40,8 +44,8 @@ const AnimePageId = ({ params }: AnimePageIdProps) => {
           <SubTitle title="Trailer" />
           <Trailer />
           <Recomendations />
-        </Container>
-      </div>
+        </SubContainer>
+      </Container>
     </>
   );
 };

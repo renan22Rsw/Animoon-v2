@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} dark font-sans`}>
+      <body className={`${openSans.variable} font-sans`}>
         <NavBar />
         <main className="min-h-screen">{children}</main>
         <SpeedDial />
