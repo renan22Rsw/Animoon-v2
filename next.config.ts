@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "s2-techtudo.glbimg.com",
       },
+
+      {
+        protocol: "https",
+        hostname: "s4.anilist.co",
+      },
     ],
   },
 };

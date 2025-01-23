@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { HeaderInfo, HeaderInfoMobile } from "./header-info";
-import { useMediaQuery } from "../../../hooks/useMediaQuery";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const Header = () => {
   const isMobile = useMediaQuery("(max-width: 640px)");

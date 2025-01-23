@@ -1,64 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { useMediaQuery } from "../../../../hooks/useMediaQuery";
+import { useMediaQuery } from "../../../hooks/useMediaQuery";
+import { AnimeMainPage } from "@/types/animes/anime-main-page";
+import Link from "next/link";
 
-const SearchContents = () => {
-  const animeList = [
-    {
-      id: 1,
-      title: "Death Note",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-    },
+interface SearchContentsProps {
+  data: AnimeMainPage[];
+}
 
-    {
-      id: 2,
-      title: "Magic Maker: Isekai Mahou no Tsukurikata",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-    },
-
-    {
-      id: 3,
-      title: "Inazuma Eleven",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-    },
-
-    {
-      id: 4,
-      title: "Naruto",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-    },
-
-    {
-      id: 5,
-      title: "Re:Zero",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-    },
-
-    {
-      id: 6,
-      title: "Re:Zero",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-    },
-  ];
-
-  const isMobile = useMediaQuery("(max-width: 640px)") ? null : animeList.pop();
+const SearchContents = ({ data }: SearchContentsProps) => {
+  const isMobile = useMediaQuery("(max-width: 640px)");
 
   return (
     <section
-      className={`lg:px-12" grid ${isMobile ? "grid-cols-5" : "grid-cols-3"} py-2`}
+      className={`lg:px-12" grid ${isMobile ? "grid-cols-3" : "grid-cols-5"} py-2`}
     >
-      {animeList.map((anime) => (
-        <div key={anime.id} className="px-2">
-          <Image
-            src={anime.img}
-            alt="anime-image"
-            width={150}
-            height={150}
-            className="cursor-pointer rounded-md"
-          />
+      {data.map((data) => (
+        <div key={data.id} className="px-2">
+          <Link href={`/data/${data.id}`}>
+            <Image
+              src={data.coverImage.large}
+              alt="data-image"
+              width={200}
+              height={200}
+              quality={100}
+              className="cursor-pointer rounded-md"
+            />
+          </Link>
           <h3 className="mr-2 max-w-[150px] space-x-4 px-2 py-2 text-sm font-semibold">
-            {anime.title}
+            {data.title.romaji.length > 35
+              ? `${data.title.romaji.slice(0, 35)}...`
+              : data.title.romaji}
           </h3>
         </div>
       ))}
