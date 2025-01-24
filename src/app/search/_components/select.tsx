@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import {
   Select,
   SelectContent,
@@ -107,9 +105,13 @@ export const geners: Geners[] = [
   },
 ];
 
-const SelectGenres = () => {
+interface selectProps {
+  setSelectValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const SelectGenres = ({ setSelectValue }: selectProps) => {
   return (
-    <Select>
+    <Select onValueChange={setSelectValue}>
       <SelectTrigger className="mx-2 w-[100px] lg:w-[120px]">
         <SelectValue placeholder="Any" />
       </SelectTrigger>

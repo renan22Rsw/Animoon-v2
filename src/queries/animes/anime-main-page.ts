@@ -94,3 +94,51 @@ export const GET_TOP_10_ANIMES = gql`
     }
   }
 `;
+
+export const GET_ANIMES_BY_NAME = gql`
+  query ($search: String) {
+    Page(page: 1) {
+      media(type: ANIME, search: $search) {
+        id
+        title {
+          romaji
+        }
+        coverImage {
+          large
+        }
+      }
+    }
+  }
+`;
+
+export const GET_ANIMES_BY_GENRE = gql`
+  query ($genre: String) {
+    Page(page: 1) {
+      media(type: ANIME, isAdult: false, genre: $genre, sort: POPULARITY_DESC) {
+        id
+        title {
+          romaji
+        }
+        coverImage {
+          large
+        }
+      }
+    }
+  }
+`;
+
+export const GET_ANIMES_BY_SEARCH_AND_GENRE = gql`
+  query ($search: String, $genre: String) {
+    Page(page: 1) {
+      media(type: ANIME, isAdult: false, search: $search, genre: $genre) {
+        id
+        title {
+          romaji
+        }
+        coverImage {
+          large
+        }
+      }
+    }
+  }
+`;

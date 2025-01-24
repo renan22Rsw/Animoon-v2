@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMediaQuery } from "../../../hooks/useMediaQuery";
 import { AnimeMainPage } from "@/types/animes/anime-main-page";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface SearchContentsProps {
   data: AnimeMainPage[];
@@ -11,6 +12,8 @@ interface SearchContentsProps {
 
 const SearchContents = ({ data }: SearchContentsProps) => {
   const isMobile = useMediaQuery("(max-width: 640px)");
+  const pathName = usePathname();
+  const pagePathName = pathName.split("/")[2];
 
   return (
     <section
@@ -18,14 +21,14 @@ const SearchContents = ({ data }: SearchContentsProps) => {
     >
       {data.map((data) => (
         <div key={data.id} className="px-2">
-          <Link href={`/data/${data.id}`}>
+          <Link href={`/${pagePathName}/${data.id}`}>
             <Image
               src={data.coverImage.large}
               alt="data-image"
               width={200}
               height={200}
               quality={100}
-              className="cursor-pointer rounded-md"
+              className="h-auto w-auto cursor-pointer rounded-md"
             />
           </Link>
           <h3 className="mr-2 max-w-[150px] space-x-4 px-2 py-2 text-sm font-semibold">

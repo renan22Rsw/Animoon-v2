@@ -10,16 +10,16 @@ const MangaContent = () => {
   return (
     <>
       <SearchTitle title="Trending Now" />
-      <SearchContents />
+      <SearchContents data={[]} />
 
       <SearchTitle title="All time popular" />
-      <SearchContents />
+      <SearchContents data={[]} />
 
       <SearchTitle title="Popular manhwa" />
-      <SearchContents />
+      <SearchContents data={[]} />
 
       <SearchTitle title="Top 10 manga" />
-      {isMobile ? <SearchContents /> : <SearchColumns />}
+      {isMobile ? <SearchContents data={[]} /> : <SearchColumns data={[]} />}
     </>
   );
 };
