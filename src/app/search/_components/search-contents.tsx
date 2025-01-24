@@ -28,7 +28,8 @@ const SearchContents = ({ data }: SearchContentsProps) => {
               width={200}
               height={200}
               quality={100}
-              className="h-auto w-auto cursor-pointer rounded-md"
+              style={{ objectFit: "fill" }}
+              className="w-[185px] cursor-pointer rounded-md sm:h-[230px] lg:h-[265px]"
             />
           </Link>
           <h3 className="mr-2 max-w-[150px] space-x-4 px-2 py-2 text-sm font-semibold">

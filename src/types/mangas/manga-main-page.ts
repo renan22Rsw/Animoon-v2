@@ -1,4 +1,4 @@
-export interface AnimeMainPage {
+export interface MangaMainPage {
   id: number;
   title: {
     romaji: string;
@@ -7,17 +7,16 @@ export interface AnimeMainPage {
     large: string;
   };
 
-  episodes?: number;
-  season?: string;
+  chapters?: number | null;
+  volumes?: number | null;
   status: string;
-  seasonYear?: number;
   type: string;
   favourites: number;
   format: string;
 }
 
-export interface AnimeMainPageResponse {
+export interface MangaMainPageResponse {
   Page: {
-    media: AnimeMainPage[];
+    media: MangaMainPage[];
   };
 }

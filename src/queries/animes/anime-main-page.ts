@@ -98,7 +98,7 @@ export const GET_TOP_10_ANIMES = gql`
 export const GET_ANIMES_BY_NAME = gql`
   query ($search: String) {
     Page(page: 1) {
-      media(type: ANIME, search: $search) {
+      media(type: ANIME, isAdult: false, search: $search) {
         id
         title {
           romaji

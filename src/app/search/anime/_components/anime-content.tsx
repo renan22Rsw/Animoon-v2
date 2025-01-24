@@ -22,7 +22,7 @@ const AnimeContent = () => {
   const currentYear = new Date().getFullYear();
   const isMobile = useMediaQuery("(max-width: 1024px)");
   const animeName = useSearchParams().get("search");
-  const genreAnime = useSearchParams().get("genre");
+  const animeGenre = useSearchParams().get("genre");
 
   const { trending, trendingLoading, trendingError } = useTrendingAnimes();
   const { nextSeason, nextSeasonLoading, nextSeasonError } =
@@ -32,15 +32,15 @@ const AnimeContent = () => {
   const { top, topLoading, topError } = useTop10Animes();
 
   const { searchData, searchLoading, searchError } = useSearchAnime(
-    animeName ?? "",
+    animeName as string,
   );
 
   const { genreData, genreLoading, genreError } = useGenreAnimes(
-    genreAnime ?? "",
+    animeGenre as string,
   );
 
   const { searchAndGenre, searchAndGenreLoading, searchAndGenreError } =
-    useSearchAndGenreAnimes(animeName ?? "", genreAnime ?? "");
+    useSearchAndGenreAnimes(animeName as string, animeGenre as string);
 
   if (
     trendingLoading ||
@@ -70,7 +70,7 @@ const AnimeContent = () => {
 
   return (
     <>
-      {!animeName && !genreAnime ? (
+      {!animeName && !animeGenre ? (
         <>
           <SearchTitle title="Trending Animes" />
           <SearchContents data={trending?.Page.media.slice(0, 5) || []} />
@@ -93,7 +93,7 @@ const AnimeContent = () => {
         </>
       ) : (
         <>
-          {animeName && genreAnime ? (
+          {animeName && animeGenre ? (
             <>
               <SearchTitle title={`Search for ${animeName}`} />
               <SearchContents data={searchAndGenre?.Page.media || []} />
@@ -103,9 +103,9 @@ const AnimeContent = () => {
               <SearchTitle title={`Search for ${animeName}`} />
               <SearchContents data={searchData?.Page.media || []} />
             </>
-          ) : genreAnime ? (
+          ) : animeGenre ? (
             <>
-              <SearchTitle title={`Genre: ${genreAnime}`} />
+              <SearchTitle title={`Genre: ${animeName !== ""}`} />
               <SearchContents data={genreData?.Page.media || []} />
             </>
           ) : (

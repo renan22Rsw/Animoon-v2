@@ -4,7 +4,6 @@ import "./globals.css";
 import NavBar from "@/components/NavBar/navbar";
 import Footer from "@/components/Footer/footer";
 import SpeedDial from "@/components/SpeedDial/speed-dial";
-import { ApolloWrapper } from "@/lib/ApolloWrapper";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -26,9 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${openSans.variable} dark font-sans`}>
         <NavBar />
-        <ApolloWrapper>
-          <main className="min-h-screen">{children}</main>
-        </ApolloWrapper>
+        <main className="min-h-screen">{children}</main>
         <SpeedDial />
         <Footer />
       </body>

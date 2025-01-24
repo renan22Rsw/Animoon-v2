@@ -25,7 +25,7 @@ const InputSearch = () => {
       } else {
         router.push(`/search/${pagePathName}`);
       }
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(searchAction);
   }, [search, genre, router, pagePathName]);

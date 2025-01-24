@@ -1,11 +1,12 @@
 import { AnimeMainPage } from "@/types/animes/anime-main-page";
+import { MangaMainPage } from "@/types/mangas/manga-main-page";
 import Image from "next/image";
 
-interface SearchColumnsProps {
-  data: AnimeMainPage[];
-}
+type typeProps = {
+  data: (AnimeMainPage & MangaMainPage)[];
+};
 
-const SearchColumns = ({ data }: SearchColumnsProps) => {
+const SearchColumns = ({ data }: typeProps) => {
   return (
     <section className="relative flex flex-col items-center justify-center">
       {data.map((content, index) => (
@@ -22,17 +23,33 @@ const SearchColumns = ({ data }: SearchColumnsProps) => {
               height={70}
               className="p-2"
             />
-            <h4 className="font-semibold">{content.title.romaji}</h4>
+            <h4 className="max-w-[350px] font-semibold">
+              {content.title.romaji}
+            </h4>
           </div>
           <div className="w-full rounded-sm">
             <div className="grid grid-cols-3 font-bold text-foreground">
               <h5 className="text-md">{content.format}</h5>
               <h5 className="text-xs">{content.type}</h5>
               <h5 className="text-xs">
-                {content.season + " " + content.seasonYear}
+                {content.season && content.seasonYear
+                  ? content.season + " " + content.seasonYear
+                  : content.volumes + " vol "
+                    ? !content.volumes
+                      ? "Relasing"
+                      : content.volumes + " vol"
+                    : ""}
               </h5>
-              <p className="text-xs">{content.favourites}</p>
-              <p className="text-xs">{content.episodes + " episodes"}</p>
+              <p className="text-xs">⭐{content.favourites} </p>
+              <p className="text-xs">
+                {content.episodes
+                  ? content.episodes + " episodes"
+                  : content.chapters + " chapters"
+                    ? !content.chapters
+                      ? "not finished"
+                      : content.chapters + " chapters"
+                    : ""}
+              </p>
               <p className="text-xs">{content.status}</p>
             </div>
           </div>
