@@ -1,16 +1,16 @@
 "use client";
 
-import Image from "next/image";
-import { useMediaQuery } from "../../../hooks/useMediaQuery";
-import { AnimeMainPage } from "@/types/animes/anime-main-page";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CharacterMainPage } from "@/types/characters/character-main-page";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import Link from "next/link";
+import Image from "next/image";
 
-interface SearchContentsProps {
-  data: AnimeMainPage[];
+interface CharacterStaffContentProps {
+  data: CharacterMainPage[];
 }
 
-const SearchContents = ({ data }: SearchContentsProps) => {
+const CharacterStaffContent = ({ data }: CharacterStaffContentProps) => {
   const isMobile = useMediaQuery("(max-width: 640px)");
   const pathName = usePathname();
   const pagePathName = pathName.split("/")[2];
@@ -23,7 +23,7 @@ const SearchContents = ({ data }: SearchContentsProps) => {
         <div key={data.id} className="px-2">
           <Link href={`/${pagePathName}/${data.id}`}>
             <Image
-              src={data.coverImage.large}
+              src={data.image?.large as string}
               alt="data-image"
               width={200}
               height={200}
@@ -33,9 +33,7 @@ const SearchContents = ({ data }: SearchContentsProps) => {
             />
           </Link>
           <h3 className="mr-2 max-w-[150px] space-x-4 px-2 py-2 text-sm font-semibold">
-            {data.title.romaji.length > 35
-              ? `${data.title.romaji.slice(0, 35)}...`
-              : data.title.romaji}
+            {data.name?.full}
           </h3>
         </div>
       ))}
@@ -43,4 +41,4 @@ const SearchContents = ({ data }: SearchContentsProps) => {
   );
 };
 
-export default SearchContents;
+export default CharacterStaffContent;

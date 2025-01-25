@@ -50,7 +50,11 @@ const InputSearch = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <SelectGenre setSelectValue={setGenre} />
+      {pathName === "/search/character" || pathName === "/search/staff" ? (
+        ""
+      ) : (
+        <SelectGenre setSelectValue={setGenre} />
+      )}
     </div>
   );
 };

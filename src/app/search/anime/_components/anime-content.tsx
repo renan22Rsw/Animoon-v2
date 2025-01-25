@@ -1,22 +1,22 @@
 "use client";
 
-import SearchContents from "../../_components/search-contents";
+import AnimeMangaContents from "../../_components/anime-manga-contents";
 import SearchTitle from "../../_components/title";
-import SearchColumns from "../../_components/search-columns";
+import AnimeMangaColumns from "../../_components/anime-manga-columns";
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useSearchParams } from "next/navigation";
 
-import useTrendingAnimes from "@/hooks/Animes/useTrendingAnimes";
-import usePopularNextSeasonAnimes from "@/hooks/Animes/usePopularNextSeasonAnimes";
-import useUpcomingAnimes from "@/hooks/Animes/useUpcomingAnimes";
-import usePopularAnimes from "@/hooks/Animes/usePopularAnimes";
-import useTop10Animes from "@/hooks/Animes/useTop10Animes";
-import useSearchAnime from "@/hooks/Animes/useSearchAnime";
-import useGenreAnimes from "@/hooks/Animes/useGenreAnimes";
-import useSearchAndGenreAnimes from "@/hooks/Animes/useSearchAndGenreAnimes";
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
+import useTrendingAnimes from "@/hooks/animes/useTrendingAnimes";
+import usePopularNextSeasonAnimes from "@/hooks/animes/usePopularNextSeasonAnimes";
+import useUpcomingAnimes from "@/hooks/animes/useUpcomingAnimes";
+import usePopularAnimes from "@/hooks/animes/usePopularAnimes";
+import useTop10Animes from "@/hooks/animes/useTop10Animes";
+import useSearchAnime from "@/hooks/animes/useSearchAnime";
+import useGenreAnimes from "@/hooks/animes/useGenreAnimes";
+import useSearchAndGenreAnimes from "@/hooks/animes/useSearchAndGenreAnimes";
 
 const AnimeContent = () => {
   const currentYear = new Date().getFullYear();
@@ -73,22 +73,22 @@ const AnimeContent = () => {
       {!animeName && !animeGenre ? (
         <>
           <SearchTitle title="Trending Animes" />
-          <SearchContents data={trending?.Page.media.slice(0, 5) || []} />
+          <AnimeMangaContents data={trending?.Page.media.slice(0, 5) || []} />
 
           <SearchTitle title="Popular this season" />
-          <SearchContents data={nextSeason?.Page.media.slice(0, 5) || []} />
+          <AnimeMangaContents data={nextSeason?.Page.media.slice(0, 5) || []} />
 
           <SearchTitle title="Upcoming next season" />
-          <SearchContents data={upcoming?.Page.media.slice(0, 5) || []} />
+          <AnimeMangaContents data={upcoming?.Page.media.slice(0, 5) || []} />
 
           <SearchTitle title="All time popular" />
-          <SearchContents data={popular?.Page.media.slice(0, 5) || []} />
+          <AnimeMangaContents data={popular?.Page.media.slice(0, 5) || []} />
 
           <SearchTitle title="Top 10 anime" />
           {isMobile ? (
-            <SearchContents data={top?.Page.media.slice(0, 10) || []} />
+            <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
           ) : (
-            <SearchColumns data={top?.Page.media.slice(0, 10) || []} />
+            <AnimeMangaColumns data={top?.Page.media.slice(0, 10) || []} />
           )}
         </>
       ) : (
@@ -96,17 +96,17 @@ const AnimeContent = () => {
           {animeName && animeGenre ? (
             <>
               <SearchTitle title={`Search for ${animeName}`} />
-              <SearchContents data={searchAndGenre?.Page.media || []} />
+              <AnimeMangaContents data={searchAndGenre?.Page.media || []} />
             </>
           ) : animeName ? (
             <>
               <SearchTitle title={`Search for ${animeName}`} />
-              <SearchContents data={searchData?.Page.media || []} />
+              <AnimeMangaContents data={searchData?.Page.media || []} />
             </>
           ) : animeGenre ? (
             <>
               <SearchTitle title={`Genre: ${animeName !== ""}`} />
-              <SearchContents data={genreData?.Page.media || []} />
+              <AnimeMangaContents data={genreData?.Page.media || []} />
             </>
           ) : (
             ""

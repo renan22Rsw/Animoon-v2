@@ -2,11 +2,11 @@ import { AnimeMainPage } from "@/types/animes/anime-main-page";
 import { MangaMainPage } from "@/types/mangas/manga-main-page";
 import Image from "next/image";
 
-type typeProps = {
+type AnimeMangaColumnsProps = {
   data: (AnimeMainPage & MangaMainPage)[];
 };
 
-const SearchColumns = ({ data }: typeProps) => {
+const AnimeMangaColumns = ({ data }: AnimeMangaColumnsProps) => {
   return (
     <section className="relative flex flex-col items-center justify-center">
       {data.map((content, index) => (
@@ -59,4 +59,4 @@ const SearchColumns = ({ data }: typeProps) => {
   );
 };
 
-export default SearchColumns;
+export default AnimeMangaColumns;

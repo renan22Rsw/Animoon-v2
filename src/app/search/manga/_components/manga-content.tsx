@@ -3,20 +3,19 @@
 import { useMediaQuery } from "../../../../hooks/useMediaQuery";
 import { useSearchParams } from "next/navigation";
 
-import SearchColumns from "../../_components/search-columns";
-import SearchContents from "../../_components/search-contents";
+import AnimeMangaColumns from "../../_components/anime-manga-columns";
 import SearchTitle from "../../_components/title";
-
-import useTrendingMangas from "@/hooks/Mangas/useTrendingMangas";
-import usePopularMangas from "@/hooks/Mangas/usePopularMangas";
-import UseTop10Mangas from "@/hooks/Mangas/useTop10Mangas";
-import useSearchMangas from "@/hooks/Mangas/useSearchMangas";
-import useGenreMangas from "@/hooks/Mangas/useGenreMangas";
-import useSearchAndGenreMangas from "@/hooks/Mangas/useSearchAndGenreMangas";
-
 import { Loading } from "../../_components/loading";
+
 import ApiNotWorking from "../../_components/api-is-not-working";
-import useLightNovel from "@/hooks/Mangas/useLightNovel";
+import useTrendingMangas from "@/hooks/mangas/useTrendingMangas";
+import usePopularMangas from "@/hooks/mangas/usePopularMangas";
+import useLightNovel from "@/hooks/mangas/useLightNovel";
+import UseTop10Mangas from "@/hooks/mangas/useTop10Mangas";
+import useSearchMangas from "@/hooks/mangas/useSearchMangas";
+import useGenreMangas from "@/hooks/mangas/useGenreMangas";
+import useSearchAndGenreMangas from "@/hooks/mangas/useSearchAndGenreMangas";
+import AnimeMangaContents from "../../_components/anime-manga-contents";
 
 const MangaContent = () => {
   const mangaName = useSearchParams().get("search");
@@ -66,19 +65,19 @@ const MangaContent = () => {
       {!mangaName && !mangaGenre ? (
         <>
           <SearchTitle title="Trending mangas" />
-          <SearchContents data={trending?.Page.media.slice(0, 5) || []} />
+          <AnimeMangaContents data={trending?.Page.media.slice(0, 5) || []} />
 
           <SearchTitle title="All time popular" />
-          <SearchContents data={popular?.Page.media.slice(0, 5) || []} />
+          <AnimeMangaContents data={popular?.Page.media.slice(0, 5) || []} />
 
           <SearchTitle title="Popular light novels" />
-          <SearchContents data={lightNovel?.Page.media.slice(0, 5) || []} />
+          <AnimeMangaContents data={lightNovel?.Page.media.slice(0, 5) || []} />
 
           <SearchTitle title="Top 10 mangas" />
           {isMobile ? (
-            <SearchContents data={top?.Page.media.slice(0, 10) || []} />
+            <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
           ) : (
-            <SearchColumns data={top?.Page.media.slice(0, 10) || []} />
+            <AnimeMangaColumns data={top?.Page.media.slice(0, 10) || []} />
           )}
         </>
       ) : (
@@ -86,17 +85,17 @@ const MangaContent = () => {
           {mangaName && mangaGenre ? (
             <>
               <SearchTitle title={`Search for ${mangaName}`} />
-              <SearchContents data={searchAndGenre?.Page.media || []} />
+              <AnimeMangaContents data={searchAndGenre?.Page.media || []} />
             </>
           ) : mangaName ? (
             <>
               <SearchTitle title={`Search for ${mangaName}`} />
-              <SearchContents data={searchData?.Page.media || []} />
+              <AnimeMangaContents data={searchData?.Page.media || []} />
             </>
           ) : mangaGenre ? (
             <>
               <SearchTitle title={`Genre: ${mangaGenre}`} />
-              <SearchContents data={genreData?.Page.media || []} />
+              <AnimeMangaContents data={genreData?.Page.media || []} />
             </>
           ) : (
             ""
