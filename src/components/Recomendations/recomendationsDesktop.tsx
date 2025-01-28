@@ -1,56 +1,37 @@
 import Image from "next/image";
 import SubTitle from "../SubTitle/sub-title";
+import { Recomendation } from "./recomendations";
+import Link from "next/link";
 
-const recomendationsAnimes = [
-  {
-    id: 1,
-    title: "Death Note",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-  },
+interface RecomendationDesktopProps {
+  recomendations: Recomendation[];
+}
 
-  {
-    id: 2,
-    title: "Death Note",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-  },
-
-  {
-    id: 3,
-    title: "Death Note",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-  },
-
-  {
-    id: 4,
-    title: "Death Note",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-  },
-
-  {
-    id: 5,
-    title: "Death Note",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s",
-  },
-];
-
-const RecomendationsDesktop = () => {
+const RecomendationsDesktop = ({
+  recomendations,
+}: RecomendationDesktopProps) => {
   return (
     <>
       <SubTitle title="Recomendations" />
-      <section className="w-full bg-[#EBF0F4] p-2 py-2 dark:bg-primary-foreground">
+      <section className="w-full rounded-md bg-[#EBF0F4] p-2 dark:bg-primary-foreground">
         <div className="grid grid-cols-5">
-          {recomendationsAnimes.map((item) => (
-            <div key={item.id} className="flex flex-col items-center sm:px-1">
-              <Image
-                src={
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s"
-                }
-                alt="recomendations-image"
-                width={150}
-                height={150}
-                className="rounded-md"
-              />
-              <h4 className="font-semibold">{item.title}</h4>
+          {recomendations.slice(0, 5).map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-col items-center space-y-2 sm:px-2"
+            >
+              <Link href={`/anime/${item.id}`}>
+                <Image
+                  src={item.image as string}
+                  alt="recomendations-image"
+                  width={150}
+                  height={150}
+                  className="h-[150px] rounded-md lg:h-[220px]"
+                />
+              </Link>
+              <h4 className="text-center text-xs font-semibold md:text-sm">
+                {item.title}
+              </h4>
             </div>
           ))}
         </div>

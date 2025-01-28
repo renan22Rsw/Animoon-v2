@@ -7,8 +7,14 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import SubTitle from "../SubTitle/sub-title";
+import Link from "next/link";
+import { Recomendation } from "./recomendations";
 
-const RecomendationsMobile = () => {
+interface RecomendationMobileProps {
+  recomendation: Recomendation[];
+}
+
+const RecomendationsMobile = ({ recomendation }: RecomendationMobileProps) => {
   return (
     <>
       <SubTitle title="Recomendations" />
@@ -19,25 +25,29 @@ const RecomendationsMobile = () => {
         className="bg-[#EBF0F4] p-2 dark:bg-primary-foreground sm:hidden"
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <div className="flex aspect-square items-center justify-center">
-                  <span className="text text-center text-lg font-semibold">
-                    <Image
-                      src={
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbPhZNAyOAgYcYvEAiXvEDZoDgc1fpAnd7Q&s"
-                      }
-                      alt="recomendations-image"
-                      width={200}
-                      height={200}
-                      className="rounded-md"
-                    />
-                    <h6>Death Note</h6>
-                  </span>
-                </div>
-              </div>
-            </CarouselItem>
+          {Array.from({ length: 5 }).map(() => (
+            <>
+              {recomendation.slice(0, 5).map(({ id, title, image }) => (
+                <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <div className="flex aspect-square items-center justify-center">
+                      <span className="text flex flex-col items-center space-y-2 text-center text-lg font-semibold">
+                        <Link href={`/anime/${id}`}>
+                          <Image
+                            src={image as string}
+                            alt="recomendations-image"
+                            width={300}
+                            height={300}
+                            className="h-[300px] w-auto rounded-md"
+                          />
+                        </Link>
+                        <h6 className="text-center text-sm">{title}</h6>
+                      </span>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </>
           ))}
         </CarouselContent>
       </Carousel>
