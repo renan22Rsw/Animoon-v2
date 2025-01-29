@@ -9,8 +9,12 @@ import {
 
 const client = () => {
   const httpLink = new HttpLink({
-    uri: "https://graphql.anilist.co.",
+    uri: "/api/anilist",
     fetchOptions: { cache: "no-store" },
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 
   return new ApolloClient({
