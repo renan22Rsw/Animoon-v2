@@ -5,10 +5,10 @@ interface InfoColumnsProps {
   genres: string[];
   averageScore: number;
   meanScore: number;
-  season: string;
-  seasonYear: number;
-  episodes: number;
-  duration: number;
+  season?: string;
+  seasonYear?: number;
+  episodes?: number;
+  duration?: number;
   source: string;
 }
 
@@ -32,11 +32,19 @@ const InfoColumns = ({
           <h5 className="font-bold">Format</h5>
           <p className="font-thin">{format}</p>
 
-          <h5 className="font-bold">Episodes</h5>
-          <p className="font-thin">{episodes}</p>
+          {episodes && (
+            <>
+              <h5 className="font-bold">Episodes</h5>
+              <p className="font-thin">{episodes}</p>
+            </>
+          )}
 
-          <h5 className="font-bold">Episode Duration</h5>
-          <p className="font-thin">{duration} mins</p>
+          {duration && (
+            <>
+              <h5 className="font-bold">Episode Duration</h5>
+              <p className="font-thin">{duration} mins</p>
+            </>
+          )}
 
           <h5 className="font-bold">Favourites</h5>
           <p className="font-thin">{favourites}</p>
@@ -44,10 +52,14 @@ const InfoColumns = ({
           <h5 className="font-bold">Status</h5>
           <p className="font-thin">{status}</p>
 
-          <h5 className="font-bold">Season</h5>
-          <p className="font-thin">
-            {season} {seasonYear}
-          </p>
+          {season && seasonYear && (
+            <>
+              <h5 className="font-bold">Season</h5>
+              <p className="font-thin">
+                {season} {seasonYear}
+              </p>
+            </>
+          )}
 
           <h5 className="font-bold">Avarage Score</h5>
           <p className="font-thin">{averageScore}%</p>

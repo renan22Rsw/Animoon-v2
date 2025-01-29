@@ -32,7 +32,7 @@ const CharacterContent = ({
     image: voiceActorImage,
     languageV2: voiceActorLanguage,
     id: voiceActorId,
-  } = voiceActors?.[0] as VoiceActor;
+  } = (voiceActors?.[0] as VoiceActor) || [];
 
   return (
     <div className="my-1 flex rounded-md bg-[#EBF0F4] dark:bg-primary-foreground xl:w-[400px] 2xl:w-[400px]">
@@ -55,19 +55,23 @@ const CharacterContent = ({
       <div className="flex w-2/4 justify-end">
         <div className="flex flex-col items-end justify-between px-1 py-2">
           <h4 className="text-xs font-semibold">
-            {voiceActorName.userPreferred}
+            {voiceActorName?.userPreferred}
           </h4>
-          <p className="text-xs">{voiceActorLanguage}</p>
+          {voiceActorLanguage && (
+            <p className="mx-1 text-xs">{voiceActorLanguage}</p>
+          )}
         </div>
-        <Link href={`/staff/${voiceActorId}`}>
-          <Image
-            src={voiceActorImage.medium}
-            alt="banner-image"
-            width={60}
-            height={60}
-            style={{ width: "auto", height: "auto" }}
-          />
-        </Link>
+        {voiceActorId && (
+          <Link href={`/staff/${voiceActorId}`}>
+            <Image
+              src={voiceActorImage?.medium}
+              alt="banner-image"
+              width={60}
+              height={60}
+              style={{ width: "auto", height: "auto" }}
+            />
+          </Link>
+        )}
       </div>
     </div>
   );
