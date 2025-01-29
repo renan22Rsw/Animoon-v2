@@ -130,7 +130,7 @@ const Manga = async ({ params }: MangasProps) => {
     );
   } catch (error) {
     console.log("Failed to fetch manga data", error);
-    return <div>Error loading anime details</div>;
+    return <div>Error loading manga details</div>;
   }
 };
 export default Manga;

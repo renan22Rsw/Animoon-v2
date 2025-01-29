@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { HeaderInfo, HeaderInfoMobile } from "./header-info";
+import { HeaderInfo, HeaderInfoMobile } from "./anime-manga-headers";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 interface HeaderProps {
@@ -22,14 +22,16 @@ const Header = ({
   return (
     <section className="relative mx-auto flex h-[700px] flex-col items-center bg-[#EBF0F4] dark:bg-primary-foreground">
       <div className="flex w-full justify-center">
-        <Image
-          src={bannerImage as string}
-          alt="banner-image"
-          quality={100}
-          width={1000}
-          height={700}
-          className="h-[200px] w-full sm:h-[350px] lg:h-[400px]"
-        />
+        {bannerImage && (
+          <Image
+            src={bannerImage as string}
+            alt="banner-image"
+            quality={100}
+            width={1000}
+            height={700}
+            className="h-[200px] w-full sm:h-[350px] lg:h-[400px]"
+          />
+        )}
       </div>
       {isMobile ? (
         <HeaderInfoMobile
