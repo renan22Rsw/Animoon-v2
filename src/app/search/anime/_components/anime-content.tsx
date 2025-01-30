@@ -20,7 +20,8 @@ import useSearchAndGenreAnimes from "@/hooks/animes/useSearchAndGenreAnimes";
 
 const AnimeContent = () => {
   const currentYear = new Date().getFullYear();
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isDeskop = useMediaQuery("(max-width: 1024px)");
   const animeName = useSearchParams().get("search");
   const animeGenre = useSearchParams().get("genre");
 
@@ -72,20 +73,54 @@ const AnimeContent = () => {
     <>
       {!animeName && !animeGenre ? (
         <>
-          <SearchTitle title="Trending Animes" />
-          <AnimeMangaContents data={trending?.Page.media.slice(0, 5) || []} />
+          {isMobile ? (
+            <>
+              <SearchTitle title="Trending Animes" />
+              <AnimeMangaContents
+                data={trending?.Page.media.slice(0, 6) || []}
+              />
 
-          <SearchTitle title="Popular this season" />
-          <AnimeMangaContents data={nextSeason?.Page.media.slice(0, 5) || []} />
+              <SearchTitle title="Popular this season" />
+              <AnimeMangaContents
+                data={nextSeason?.Page.media.slice(0, 6) || []}
+              />
 
-          <SearchTitle title="Upcoming next season" />
-          <AnimeMangaContents data={upcoming?.Page.media.slice(0, 5) || []} />
+              <SearchTitle title="Upcoming next season" />
+              <AnimeMangaContents
+                data={upcoming?.Page.media.slice(0, 6) || []}
+              />
 
-          <SearchTitle title="All time popular" />
-          <AnimeMangaContents data={popular?.Page.media.slice(0, 5) || []} />
+              <SearchTitle title="All time popular" />
+              <AnimeMangaContents
+                data={popular?.Page.media.slice(0, 6) || []}
+              />
+            </>
+          ) : (
+            <>
+              <SearchTitle title="Trending Animes" />
+              <AnimeMangaContents
+                data={trending?.Page.media.slice(0, 5) || []}
+              />
+
+              <SearchTitle title="Popular this season" />
+              <AnimeMangaContents
+                data={nextSeason?.Page.media.slice(0, 5) || []}
+              />
+
+              <SearchTitle title="Upcoming next season" />
+              <AnimeMangaContents
+                data={upcoming?.Page.media.slice(0, 5) || []}
+              />
+
+              <SearchTitle title="All time popular" />
+              <AnimeMangaContents
+                data={popular?.Page.media.slice(0, 5) || []}
+              />
+            </>
+          )}
 
           <SearchTitle title="Top 10 anime" />
-          {isMobile ? (
+          {isDeskop ? (
             <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
           ) : (
             <AnimeMangaColumns data={top?.Page.media.slice(0, 10) || []} />

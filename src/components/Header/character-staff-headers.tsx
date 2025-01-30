@@ -31,7 +31,7 @@ export const CharacterOrStaffHeaderMobile = ({
   homeTown,
 }: CharacterOrStaffHeaderProps) => {
   return (
-    <header className="w-full sm:h-[250px] sm:dark:bg-primary-foreground">
+    <header className="sm: w-full bg-[#EBF0F4] sm:h-[250px] sm:dark:bg-primary-foreground">
       <div className="flex flex-col items-center space-y-4">
         <h2 className="text-2xl font-bold">
           {name.userPreferred ? name.userPreferred : name.alternative}
@@ -108,7 +108,7 @@ export const CharacterOrStaffHeader = ({
   homeTown,
 }: CharacterOrStaffHeaderProps) => {
   return (
-    <header className="h-[150px] w-full dark:bg-primary-foreground">
+    <header className="h-[150px] w-full bg-[#EBF0F4] dark:bg-primary-foreground">
       <section className="mx-14 flex py-8">
         <div className="flex flex-col items-center space-y-4">
           <Image
@@ -122,7 +122,7 @@ export const CharacterOrStaffHeader = ({
         </div>
 
         <section className="my-4 ml-4 w-full space-y-2">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="pt-8 text-2xl font-semibold">
             {name.userPreferred ? name.userPreferred : name.native}
           </h2>
           <p className="font-thin">

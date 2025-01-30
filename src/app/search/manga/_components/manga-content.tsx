@@ -20,7 +20,8 @@ import AnimeMangaContents from "../../_components/anime-manga-contents";
 const MangaContent = () => {
   const mangaName = useSearchParams().get("search");
   const mangaGenre = useSearchParams().get("genre");
-  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isDesktop = useMediaQuery("(max-width: 1024px)");
 
   const { trending, trendingLoading, trendingError } = useTrendingMangas();
   const { popular, popularLoading, popularError } = usePopularMangas();
@@ -64,20 +65,54 @@ const MangaContent = () => {
     <>
       {!mangaName && !mangaGenre ? (
         <>
-          <SearchTitle title="Trending mangas" />
-          <AnimeMangaContents data={trending?.Page.media.slice(0, 5) || []} />
-
-          <SearchTitle title="All time popular" />
-          <AnimeMangaContents data={popular?.Page.media.slice(0, 5) || []} />
-
-          <SearchTitle title="Popular light novels" />
-          <AnimeMangaContents data={lightNovel?.Page.media.slice(0, 5) || []} />
-
-          <SearchTitle title="Top 10 mangas" />
           {isMobile ? (
-            <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
+            <>
+              <SearchTitle title="Trending mangas" />
+              <AnimeMangaContents
+                data={trending?.Page.media.slice(0, 6) || []}
+              />
+
+              <SearchTitle title="All time popular" />
+              <AnimeMangaContents
+                data={popular?.Page.media.slice(0, 6) || []}
+              />
+
+              <SearchTitle title="Popular light novels" />
+              <AnimeMangaContents
+                data={lightNovel?.Page.media.slice(0, 6) || []}
+              />
+
+              <SearchTitle title="Top 10 mangas" />
+              {isDesktop ? (
+                <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
+              ) : (
+                <AnimeMangaColumns data={top?.Page.media.slice(0, 10) || []} />
+              )}
+            </>
           ) : (
-            <AnimeMangaColumns data={top?.Page.media.slice(0, 10) || []} />
+            <>
+              <SearchTitle title="Trending mangas" />
+              <AnimeMangaContents
+                data={trending?.Page.media.slice(0, 5) || []}
+              />
+
+              <SearchTitle title="All time popular" />
+              <AnimeMangaContents
+                data={popular?.Page.media.slice(0, 5) || []}
+              />
+
+              <SearchTitle title="Popular light novels" />
+              <AnimeMangaContents
+                data={lightNovel?.Page.media.slice(0, 5) || []}
+              />
+
+              <SearchTitle title="Top 10 mangas" />
+              {isDesktop ? (
+                <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
+              ) : (
+                <AnimeMangaColumns data={top?.Page.media.slice(0, 10) || []} />
+              )}
+            </>
           )}
         </>
       ) : (
