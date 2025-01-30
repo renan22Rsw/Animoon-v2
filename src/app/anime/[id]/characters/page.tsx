@@ -1,26 +1,22 @@
 import CharacterContent from "@/components/CharacterContent/character-content";
+import Container from "@/components/Container/container";
 import GridContainer from "@/components/GridContainer/grid-container";
 import Header from "@/components/Header/header";
 import InfoColumns from "@/components/InfoColumns/info-columns";
-import Recomendations from "@/components/Recomendations/recomendations";
-import StaffContent from "@/components/StaffContent/staff-content";
-import SubTitle from "@/components/SubTitle/sub-title";
-import Trailer from "@/components/Trailer/trailer";
 import SubContainer from "@/components/SubContainer/sub-container";
-import Container from "@/components/Container/container";
-
 import { getClient } from "@/lib/ApolloClient";
-import { getAnimeByIdResponse } from "@/types/animes/anime-by-id";
 import { GET_ANIME_BY_ID } from "@/queries/animes/anime-by-id";
-import Link from "next/link";
+import { getAnimeByIdResponse } from "@/types/animes/anime-by-id";
 
-interface AnimePageIdProps {
+interface CharactersFromAnimeByidPageProps {
   params: {
     id: number;
   };
 }
 
-const AnimePageId = async ({ params }: AnimePageIdProps) => {
+const CharactersFromAnimeByidPage = async ({
+  params,
+}: CharactersFromAnimeByidPageProps) => {
   const { id } = await params;
 
   try {
@@ -32,7 +28,7 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
     const data = response.data?.Page.media;
 
     if (!data || data.length === 0) {
-      return <div>Anime not found</div>;
+      return <div>Characters not found</div>;
     }
 
     const {
@@ -52,9 +48,6 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
       episodes,
       duration,
       characters,
-      staff,
-      trailer,
-      recommendations,
     } = data[0];
 
     return (
@@ -69,7 +62,6 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
               : description.replace(/<[^>]+>/g, "")
           }
         />
-
         <Container>
           <InfoColumns
             format={format}
@@ -84,14 +76,9 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
             seasonYear={seasonYear}
             source={source}
           />
-
           <SubContainer>
-            <Link href={`/anime/${id}/characters`}>
-              {" "}
-              <SubTitle title="Characters" />
-            </Link>
             <GridContainer>
-              {characters?.edges.slice(0, 6).map((character) => (
+              {characters?.edges.map((character) => (
                 <CharacterContent
                   key={character.node.id}
                   id={character.node.id}
@@ -111,49 +98,14 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
                 />
               ))}
             </GridContainer>
-            <Link href={`/anime/${id}/staffs`}>
-              {" "}
-              <SubTitle title="Staffs" />
-            </Link>
-            <GridContainer>
-              {staff?.nodes
-                .slice(0, 4)
-                .map((staff, index) => (
-                  <StaffContent
-                    key={index}
-                    id={staff.id}
-                    name={staff.name.userPreferred}
-                    image={staff.image.medium}
-                    occupation={staff.primaryOccupations[0]}
-                  />
-                ))}
-            </GridContainer>
-
-            {trailer && (
-              <>
-                <SubTitle title="Trailer" />
-                <Trailer id={trailer?.id} />
-              </>
-            )}
-            {recommendations && (
-              <Recomendations
-                recomendation={[
-                  ...recommendations?.nodes.map((recomendation) => ({
-                    id: recomendation.mediaRecommendation.id,
-                    title: recomendation.mediaRecommendation.title.romaji,
-                    image: recomendation.mediaRecommendation.coverImage.large,
-                  })),
-                ]}
-              />
-            )}
           </SubContainer>
         </Container>
       </>
     );
   } catch (error) {
-    console.error("Failed to fetch anime data:", error);
-    return <div>Error loading anime details</div>;
+    console.error("Failed to fetch characters data:", error);
+    return <div>Error loading characters details</div>;
   }
 };
 
-export default AnimePageId;
+export default CharactersFromAnimeByidPage;
