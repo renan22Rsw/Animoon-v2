@@ -5,6 +5,7 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import SelectGenre from "./select";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 const InputSearch = () => {
   const [search, setSearch] = useState<string>("");
@@ -35,6 +36,11 @@ const InputSearch = () => {
     setGenre("");
   }, [pathName]);
 
+  const handleReset = () => {
+    setSearch("");
+    setGenre("");
+  };
+
   return (
     <div className="flex w-full items-center justify-center">
       <div className="relative">
@@ -53,7 +59,17 @@ const InputSearch = () => {
       {pathName === "/search/character" || pathName === "/search/staff" ? (
         ""
       ) : (
-        <SelectGenre setSelectValue={setGenre} />
+        <>
+          {" "}
+          <SelectGenre setSelectValue={setGenre} />
+          {search || genre ? (
+            <Button variant={"outline"} onClick={handleReset}>
+              Reset
+            </Button>
+          ) : (
+            ""
+          )}
+        </>
       )}
     </div>
   );
