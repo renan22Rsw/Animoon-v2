@@ -45,7 +45,7 @@ const InputSearch = () => {
         />
         <Input
           placeholder="Search..."
-          className="w-[150px] px-6 placeholder:italic sm:w-[250px] md:w-[300px]"
+          className="w-[150px] px-6 capitalize placeholder:italic sm:w-[250px] md:w-[300px]"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

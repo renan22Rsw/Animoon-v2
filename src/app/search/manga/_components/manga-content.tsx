@@ -67,22 +67,25 @@ const MangaContent = () => {
         <>
           {isMobile ? (
             <>
-              <SearchTitle title="Trending mangas" />
+              <SearchTitle title="Trending mangas" href="manga/trending" />
               <AnimeMangaContents
                 data={trending?.Page.media.slice(0, 6) || []}
               />
 
-              <SearchTitle title="All time popular" />
+              <SearchTitle title="All time popular" href="manga/popular" />
               <AnimeMangaContents
                 data={popular?.Page.media.slice(0, 6) || []}
               />
 
-              <SearchTitle title="Popular light novels" />
+              <SearchTitle
+                title="Popular light novels"
+                href="manga/light-novels"
+              />
               <AnimeMangaContents
                 data={lightNovel?.Page.media.slice(0, 6) || []}
               />
 
-              <SearchTitle title="Top 10 mangas" />
+              <SearchTitle title="Top 10 mangas" href="manga/top-50" />
               {isDesktop ? (
                 <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
               ) : (
@@ -91,22 +94,25 @@ const MangaContent = () => {
             </>
           ) : (
             <>
-              <SearchTitle title="Trending mangas" />
+              <SearchTitle title="Trending mangas" href="manga/trending" />
               <AnimeMangaContents
                 data={trending?.Page.media.slice(0, 5) || []}
               />
 
-              <SearchTitle title="All time popular" />
+              <SearchTitle title="All time popular" href="manga/popular" />
               <AnimeMangaContents
                 data={popular?.Page.media.slice(0, 5) || []}
               />
 
-              <SearchTitle title="Popular light novels" />
+              <SearchTitle
+                title="Popular light novels"
+                href="manga/light-novels"
+              />
               <AnimeMangaContents
                 data={lightNovel?.Page.media.slice(0, 5) || []}
               />
 
-              <SearchTitle title="Top 10 mangas" />
+              <SearchTitle title="Top 10 mangas" href="manga/top-50" />
               {isDesktop ? (
                 <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
               ) : (

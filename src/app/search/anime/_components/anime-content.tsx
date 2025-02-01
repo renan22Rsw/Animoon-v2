@@ -75,51 +75,57 @@ const AnimeContent = () => {
         <>
           {isMobile ? (
             <>
-              <SearchTitle title="Trending Animes" />
+              <SearchTitle title="Trending Animes" href="anime/trending" />
               <AnimeMangaContents
                 data={trending?.Page.media.slice(0, 6) || []}
               />
 
-              <SearchTitle title="Popular this season" />
+              <SearchTitle
+                title="Popular this season"
+                href="anime/this-season"
+              />
               <AnimeMangaContents
                 data={nextSeason?.Page.media.slice(0, 6) || []}
               />
 
-              <SearchTitle title="Upcoming next season" />
+              <SearchTitle title="Upcoming next season" href="anime/upcoming" />
               <AnimeMangaContents
                 data={upcoming?.Page.media.slice(0, 6) || []}
               />
 
-              <SearchTitle title="All time popular" />
+              <SearchTitle title="All time popular" href="anime/popular" />
               <AnimeMangaContents
                 data={popular?.Page.media.slice(0, 6) || []}
               />
             </>
           ) : (
             <>
-              <SearchTitle title="Trending Animes" />
+              <SearchTitle title="Trending Animes" href="anime/trending" />
               <AnimeMangaContents
                 data={trending?.Page.media.slice(0, 5) || []}
               />
 
-              <SearchTitle title="Popular this season" />
+              <SearchTitle
+                title="Popular this season"
+                href="anime/this-season"
+              />
               <AnimeMangaContents
                 data={nextSeason?.Page.media.slice(0, 5) || []}
               />
 
-              <SearchTitle title="Upcoming next season" />
+              <SearchTitle title="Upcoming next season" href="anime/upcoming" />
               <AnimeMangaContents
                 data={upcoming?.Page.media.slice(0, 5) || []}
               />
 
-              <SearchTitle title="All time popular" />
+              <SearchTitle title="All time popular" href="anime/popular" />
               <AnimeMangaContents
                 data={popular?.Page.media.slice(0, 5) || []}
               />
             </>
           )}
 
-          <SearchTitle title="Top 10 anime" />
+          <SearchTitle title="Top 10 anime" href="anime/top-50" />
           {isDeskop ? (
             <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
           ) : (
@@ -140,7 +146,7 @@ const AnimeContent = () => {
             </>
           ) : animeGenre ? (
             <>
-              <SearchTitle title={`Genre: ${animeName !== ""}`} />
+              <SearchTitle title={`Genre: ${animeGenre}`} />
               <AnimeMangaContents data={genreData?.Page.media || []} />
             </>
           ) : (
