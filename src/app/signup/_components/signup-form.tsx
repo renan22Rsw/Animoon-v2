@@ -1,0 +1,117 @@
+"use client";
+
+import CardWrapper from "@/components/Authentication/card-wrapper";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { signupSchema } from "@/schemas";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import SuccessMessage from "@/components/Authentication/success-message";
+import { useState, useTransition } from "react";
+import ErrorMessage from "@/components/Authentication/error-message";
+
+const SignupForm = () => {
+  const [success, setSuccess] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [isPending, startTransition] = useTransition();
+
+  const form = useForm<z.infer<typeof signupSchema>>({
+    resolver: zodResolver(signupSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = (values: z.infer<typeof signupSchema>) => {
+    startTransition(() => {
+      try {
+        console.log(values);
+        setSuccess("Successfully signed up!");
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (err) {
+        setError("Something went wrong");
+      }
+    });
+  };
+
+  return (
+    <CardWrapper
+      title="SignUp"
+      description="Create an account"
+      socialMedia
+      linkTitle="Already have an account?"
+      link="/login"
+    >
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Your name..." {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="example@gmail.com"
+                    {...field}
+                    type="email"
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <Input placeholder="********" type="password" {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit" className="w-full" disabled={isPending}>
+            Sign Up
+          </Button>
+          <SuccessMessage message={success} />
+          <ErrorMessage message={error} />
+        </form>
+      </Form>
+    </CardWrapper>
+  );
+};
+
+export default SignupForm;
