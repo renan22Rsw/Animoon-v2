@@ -1,51 +1,9 @@
 import NextAuth from "next-auth";
-
 import { prisma } from "@/database/db";
-import Credentials from "next-auth/providers/credentials";
-import GitHub from "next-auth/providers/github";
-import Google from "next-auth/providers/google";
-import { getUserCredentials } from "@/actions/getUserCredentials";
 import { getUserEmail } from "@/actions/findUserByEmail";
+import authConfig from "./auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  providers: [
-    Credentials({
-      credentials: {
-        email: {},
-        password: {},
-      },
-
-      authorize: async (credentials) => {
-        if (!credentials.email || !credentials.password) {
-          return null;
-        }
-        const user = await getUserCredentials(
-          credentials.email as string,
-          credentials.password as string,
-        );
-
-        if (user) {
-          return user;
-        }
-        return null;
-      },
-    }),
-
-    GitHub({
-      clientId: process.env.AUTH_GITHUB_ID as string,
-      clientSecret: process.env.AUTH_GITHUB_SECRET as string,
-    }),
-
-    Google({
-      clientId: process.env.AUTH_GOOGLE_ID as string,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET as string,
-    }),
-  ],
-
-  session: {
-    strategy: "jwt",
-  },
-
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
@@ -79,5 +37,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
       return true;
     },
+  },
+  ...authConfig,
+  session: {
+    strategy: "jwt",
   },
 });
