@@ -17,6 +17,7 @@ import {
 
 import { SunIcon, MoonIcon, ShadowIcon } from "@radix-ui/react-icons";
 import UserPicture from "../User/user-picture";
+import { signOut } from "../../../auth";
 
 const UserIcon = () => {
   return (
@@ -63,7 +64,15 @@ const UserIcon = () => {
 
         <DropdownMenuItem>
           <LogOut />
-          <Button variant={"link"}>Log out</Button>
+          <Button
+            variant={"link"}
+            onClick={async () => {
+              "use server";
+              await signOut();
+            }}
+          >
+            Log out
+          </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

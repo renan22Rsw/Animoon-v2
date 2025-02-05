@@ -18,10 +18,11 @@ import { Button } from "@/components/ui/button";
 import SuccessMessage from "@/components/Authentication/success-message";
 import { useState, useTransition } from "react";
 import ErrorMessage from "@/components/Authentication/error-message";
+import { createUser } from "@/actions/register";
 
 const SignupForm = () => {
-  const [success, setSuccess] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [success, setSuccess] = useState<string | null>();
+  const [error, setError] = useState<string | null>();
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<z.infer<typeof signupSchema>>({
@@ -35,13 +36,10 @@ const SignupForm = () => {
 
   const onSubmit = (values: z.infer<typeof signupSchema>) => {
     startTransition(() => {
-      try {
-        console.log(values);
-        setSuccess("Successfully signed up!");
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      } catch (err) {
-        setError("Something went wrong");
-      }
+      createUser(values).then((res) => {
+        setSuccess(res.success);
+        setError(res.error);
+      });
     });
   };
 
@@ -106,8 +104,8 @@ const SignupForm = () => {
           <Button type="submit" className="w-full" disabled={isPending}>
             Sign Up
           </Button>
-          <SuccessMessage message={success} />
-          <ErrorMessage message={error} />
+          <SuccessMessage message={success as string} />
+          <ErrorMessage message={error as string} />
         </form>
       </Form>
     </CardWrapper>
