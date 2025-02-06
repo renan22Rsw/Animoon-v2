@@ -1,17 +1,16 @@
 "use server";
 
-import { prisma } from "@/database/db";
+import { prisma as db } from "@/database/db";
 
 export const getUserEmail = async (email: string) => {
   try {
-    const user = await prisma.user.findUnique({
+    const user = await db.user.findUnique({
       where: {
         email: email,
       },
     });
-
     return user;
   } catch (err) {
-    return { error: err };
+    console.log(err);
   }
 };

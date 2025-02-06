@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import { prisma } from "@/database/db";
-import { getUserEmail } from "@/actions/findUserByEmail";
+import { getUserEmail } from "@/data/getUserByEmail";
 import authConfig from "./auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -23,7 +23,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
 
-    async signIn({ user }) {
+    async signIn({ user, account }) {
+      //user for credentials and account for provider
+      if (account?.provider !== "credentials") {
+        return true;
+      }
+
       const email = user?.email;
       const existingUser = await getUserEmail(email as string);
 
@@ -35,6 +40,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           },
         });
       }
+      if (!existingUser?.emailVerified) {
+        return false;
+      }
+
       return true;
     },
   },

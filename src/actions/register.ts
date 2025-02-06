@@ -2,9 +2,11 @@
 
 import { signupSchema } from "@/schemas";
 import { z } from "zod";
-import { getUserEmail } from "./findUserByEmail";
+import { getUserEmail } from "../data/getUserByEmail";
 import bcrypt from "bcrypt";
-import { prisma } from "@/database/db";
+import { prisma as db } from "@/database/db";
+import { generateVerificationToken } from "@/database/token";
+import { sendVerificationEmail } from "@/app/api/send/route";
 
 export const createUser = async (values: z.infer<typeof signupSchema>) => {
   try {
@@ -28,7 +30,7 @@ export const createUser = async (values: z.infer<typeof signupSchema>) => {
 
     const hashedPassword = bcrypt.hashSync(password, 10);
 
-    await prisma.user.create({
+    await db.user.create({
       data: {
         name,
         email,
@@ -36,8 +38,12 @@ export const createUser = async (values: z.infer<typeof signupSchema>) => {
       },
     });
 
+    const verificationToken = await generateVerificationToken(email);
+
+    await sendVerificationEmail(email, verificationToken.token);
+
     return {
-      success: "User created successfully",
+      success: "Email verification was sent",
     };
   } catch (err) {
     return {

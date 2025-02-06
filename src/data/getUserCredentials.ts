@@ -1,10 +1,10 @@
 "use server";
 
-import { prisma } from "@/database/db";
+import { prisma as db } from "@/database/db";
 import bcrypt from "bcrypt";
 
 export const getUserCredentials = async (email: string, password: string) => {
-  const user = await prisma.user.findFirst({
+  const user = await db.user.findFirst({
     where: {
       email: email,
     },
@@ -14,7 +14,7 @@ export const getUserCredentials = async (email: string, password: string) => {
     return null;
   }
 
-  const validPassword = bcrypt.compareSync(password, user.password);
+  const validPassword = bcrypt.compareSync(password, user.password as string);
 
   if (validPassword) {
     return { id: user.id, email: user.email, name: user.name };

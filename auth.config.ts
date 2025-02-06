@@ -1,4 +1,4 @@
-import { getUserCredentials } from "@/actions/getUserCredentials";
+import { getUserCredentials } from "@/data/getUserCredentials";
 import { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
