@@ -25,7 +25,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
     async signIn({ user, account }) {
       //user for credentials and account for provider
-      if (account?.provider !== "credentials") {
+
+      if (account?.provider === "google" || account?.provider === "github") {
+        const email = user?.email;
+        const existingUser = await getUserEmail(email as string);
+
+        if (!existingUser) {
+          await prisma.user.create({
+            data: {
+              name: user?.name as string,
+              email: user?.email as string,
+            },
+          });
+        }
         return true;
       }
 

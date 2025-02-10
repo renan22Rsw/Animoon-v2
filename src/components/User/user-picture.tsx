@@ -1,10 +1,20 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import userProfileImage from "@/../public/no-picture.png";
+import Image from "next/image";
 
-export const UserPicture = () => {
+export const UserPicture = ({ icon }: { icon?: string }) => {
   return (
     <Avatar className="cursor-pointer">
-      <AvatarImage src="https://github.com/shadcn.png" alt="user-picture" />
-      <AvatarFallback>CN</AvatarFallback>
+      <AvatarImage
+        src={icon ? icon : (userProfileImage as unknown as string)}
+        alt="user-picture"
+      />
+      <AvatarFallback>
+        <Image
+          src={icon ? icon : (userProfileImage as unknown as string)}
+          alt="user-picture"
+        />
+      </AvatarFallback>
     </Avatar>
   );
 };

@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "s4.anilist.co",
       },
+
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
     ],
   },
 };

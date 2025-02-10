@@ -17,13 +17,16 @@ import {
 
 import { SunIcon, MoonIcon, ShadowIcon } from "@radix-ui/react-icons";
 import UserPicture from "../User/user-picture";
-import { signOut } from "../../../auth";
+import { auth, signOut } from "../../../auth";
+import Link from "next/link";
 
-const UserIcon = () => {
+const UserIcon = async () => {
+  const session = await auth();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <UserPicture />
+        <UserPicture icon={session?.user?.image as string} />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -31,11 +34,17 @@ const UserIcon = () => {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <User />
-            <Button variant={"link"}>Profile</Button>
+            <Link href={"/user/profile"}>
+              {" "}
+              <Button variant={"link"}>Profile</Button>
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Settings />
-            <Button variant={"link"}>Settings</Button>
+            <Link href={"/user/settings"}>
+              {" "}
+              <Button variant={"link"}>Settings</Button>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
