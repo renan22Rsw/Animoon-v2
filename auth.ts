@@ -53,9 +53,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           },
         });
       }
-      if (!existingUser?.emailVerified) {
-        return false;
-      }
 
       return true;
     },

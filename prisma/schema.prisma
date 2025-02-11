@@ -37,7 +37,6 @@ model User {
   id            String          @id @default(uuid())
   name          String
   email         String          @unique
-  emailVerified DateTime?
   password      String?
   image         String?
   accounts      Account[]
@@ -47,15 +46,6 @@ model User {
   staffList     StaffList[]
 }
 
-model VerificationToken {
-  id      String   @id @default(uuid())
-  email   String
-  token   String
-  expires DateTime
-
-  @@unique([email, token])
-  @@map("users")
-}
 
 model AnimeList {
   id      String @id @default(uuid())
