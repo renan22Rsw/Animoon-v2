@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import SuccessMessage from "@/components/Authentication/success-message";
 import { useState, useTransition } from "react";
 import ErrorMessage from "@/components/Authentication/error-message";
-import { createUser } from "@/actions/register";
+import { createUser } from "@/actions/auth/register";
 
 const SignupForm = () => {
   const [success, setSuccess] = useState<string | null>();

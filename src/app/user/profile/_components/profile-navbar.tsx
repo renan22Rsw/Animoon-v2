@@ -35,10 +35,10 @@ const ProfileNavbar = () => {
 
   return (
     <div>
-      <ul className="flex h-[70px] items-center justify-center space-x-8 bg-[#EBF0F4] dark:bg-primary-foreground">
+      <ul className="flex h-[70px] items-center justify-center space-x-2 bg-[#EBF0F4] dark:bg-primary-foreground md:space-x-8">
         {navItems.map((item) => (
           <Link key={item.id} href={item.link}>
-            <li className="font-bold">{item.item}</li>
+            <li className="text-xs font-bold sm:text-base">{item.item}</li>
           </Link>
         ))}
       </ul>

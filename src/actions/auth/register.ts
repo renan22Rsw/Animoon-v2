@@ -2,7 +2,7 @@
 
 import { signupSchema } from "@/schemas";
 import { z } from "zod";
-import { getUserEmail } from "../data/getUserByEmail";
+import { getUserEmail } from "../../data/auth/getUserByEmail";
 import bcrypt from "bcrypt";
 import { prisma as db } from "@/database/db";
 import { generateVerificationToken } from "@/database/token";

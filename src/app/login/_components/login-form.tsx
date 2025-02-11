@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useTransition } from "react";
 import SuccessMessage from "@/components/Authentication/success-message";
 import ErrorMessage from "@/components/Authentication/error-message";
-import { login } from "@/actions/login";
+import { login } from "@/actions/auth/login";
 
 const LoginForm = () => {
   const [success, setSuccess] = useState<string | null>();

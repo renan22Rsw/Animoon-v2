@@ -2,11 +2,11 @@ import { redirect } from "next/navigation";
 import { auth } from "../../../../../auth";
 import UserProfileHeader from "../_components/profile-header";
 import DataList from "../_components/data-list";
-import { getAnimeDatas } from "@/data/animoon/getDatas";
+import { getMangasDatas } from "@/data/animoon/getDatas";
 
-const AnimeListPage = async () => {
+const MangaListPage = async () => {
   const session = await auth();
-  const animes = await getAnimeDatas();
+  const mangas = await getMangasDatas();
 
   if (!session?.user?.id) {
     redirect("/login");
@@ -18,9 +18,9 @@ const AnimeListPage = async () => {
         name={session?.user?.name as string}
         img={session?.user?.image as string}
       />
-      <DataList datas={animes as []} path="manga" />
+      <DataList datas={mangas as []} path="manga" />
     </>
   );
 };
 
-export default AnimeListPage;
+export default MangaListPage;

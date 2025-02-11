@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar/navbar";
 import Footer from "@/components/Footer/footer";
 import SpeedDial from "@/components/SpeedDial/speed-dial";
+import { Toaster } from "@/components/ui/toaster";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} dark font-sans`}>
         <NavBar />
         <main className="min-h-screen">{children}</main>
+        <Toaster />
         <SpeedDial />
         <Footer />
       </body>

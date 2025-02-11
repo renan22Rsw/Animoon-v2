@@ -13,6 +13,8 @@ export const UserPicture = ({ icon }: { icon?: string }) => {
         <Image
           src={icon ? icon : (userProfileImage as unknown as string)}
           alt="user-picture"
+          width={50}
+          height={50}
         />
       </AvatarFallback>
     </Avatar>

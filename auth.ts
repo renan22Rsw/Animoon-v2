@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import { prisma } from "@/database/db";
-import { getUserEmail } from "@/data/getUserByEmail";
+import { getUserEmail } from "@/data/auth/getUserByEmail";
 import authConfig from "./auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -33,6 +33,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (!existingUser) {
           await prisma.user.create({
             data: {
+              id: user.id as string,
               name: user?.name as string,
               email: user?.email as string,
             },

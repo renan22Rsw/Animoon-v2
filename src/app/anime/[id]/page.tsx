@@ -16,7 +16,7 @@ import Link from "next/link";
 
 interface AnimePageIdProps {
   params: {
-    id: number;
+    id: string;
   };
 }
 
@@ -60,6 +60,7 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
     return (
       <>
         <Header
+          id={id}
           title={title.romaji}
           bannerImage={bannerImage}
           headerImage={coverImage.extraLarge}
@@ -139,9 +140,9 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
               <Recomendations
                 recomendation={[
                   ...recommendations?.nodes.map((recomendation) => ({
-                    id: recomendation.mediaRecommendation.id,
-                    title: recomendation.mediaRecommendation.title.romaji,
-                    image: recomendation.mediaRecommendation.coverImage.large,
+                    id: recomendation.mediaRecommendation?.id,
+                    title: recomendation.mediaRecommendation?.title.romaji,
+                    image: recomendation.mediaRecommendation?.coverImage.large,
                   })),
                 ]}
               />

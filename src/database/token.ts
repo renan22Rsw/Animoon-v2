@@ -1,6 +1,6 @@
 "use server";
 
-import { getVerificationTokenByEmail } from "@/data/getVerificationTokenByEmail";
+import { getVerificationTokenByEmail } from "@/data/auth/getVerificationTokenByEmail";
 import { v4 as uuidv4 } from "uuid";
 import { prisma as db } from "@/database/db";
 

@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useCallback, useEffect, useState } from "react";
-import { newVerification } from "@/actions/new-verification";
+import { newVerification } from "@/actions/auth/new-verification";
 
 const VerifyEmailPageContent = () => {
   const [success, setSuccess] = useState<string | undefined>(undefined);

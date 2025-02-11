@@ -1,0 +1,111 @@
+"use client";
+
+import Image from "next/image";
+import { Button } from "../ui/button";
+import { useTransition } from "react";
+import {
+  addAnimesToList,
+  addMangasToList,
+} from "@/actions/animoon/add-datas-to-list";
+import { toast } from "@/hooks/use-toast";
+import { usePathname } from "next/navigation";
+
+interface HeaderInfoProps {
+  headerImage: string;
+  title: string;
+  description: string;
+  id: string;
+}
+
+export const AnimeMangaHeader = ({
+  title,
+  description,
+  headerImage,
+  id,
+}: HeaderInfoProps) => {
+  const [isPending, startTransition] = useTransition();
+  const pathName = usePathname().split("/")[1];
+  console.log(pathName);
+  const handleAddAnimeToList = () => {
+    startTransition(() => {
+      addAnimesToList(title, headerImage, id)
+        .then((res) => {
+          toast({
+            title: res.success,
+            description: "Congrats! You have added this anime to your list",
+          });
+          if (res.error) {
+            toast({
+              variant: "destructive",
+              title: res.error,
+              description: "Please try again",
+            });
+          }
+        })
+
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
+  };
+
+  const handleAddMangaToList = () => {
+    startTransition(() => {
+      addMangasToList(title, headerImage, id)
+        .then((res) => {
+          toast({
+            title: res.success,
+            description: "Congrats! You have added this manga to your list",
+          });
+          if (res.error) {
+            toast({
+              variant: "destructive",
+              title: res.error,
+              description: "Please try again",
+            });
+          }
+        })
+
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
+  };
+
+  return (
+    <div className="absolute bottom-10 mx-auto flex justify-center xl:w-[88%] 2xl:w-3/5">
+      <div className="mx-6 space-y-4">
+        <Image
+          src={headerImage as string}
+          alt="hearder-picture"
+          width={200}
+          height={200}
+        />
+        <Button
+          variant={"outline"}
+          disabled={isPending}
+          onClick={
+            pathName === "anime" ? handleAddAnimeToList : handleAddMangaToList
+          }
+          className="w-full"
+        >
+          Add List
+        </Button>
+      </div>
+      <div className="mx-3 flex w-full flex-col justify-center space-y-4">
+        <h2 className="pt-4 text-start font-bold">{title}</h2>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default AnimeMangaHeader;

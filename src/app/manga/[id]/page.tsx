@@ -15,7 +15,7 @@ import Link from "next/link";
 
 interface MangasProps {
   params: {
-    id: number;
+    id: string;
   };
 }
 
@@ -55,6 +55,7 @@ const Manga = async ({ params }: MangasProps) => {
     return (
       <>
         <Header
+          id={id}
           title={title.romaji}
           headerImage={coverImage.extraLarge}
           bannerImage={bannerImage}

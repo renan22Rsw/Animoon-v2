@@ -1,7 +1,6 @@
-"use server"
+"use server";
 
-
-import { prisma as db } from "../database/db";
+import { prisma as db } from "../../database/db";
 
 export const getVerificationTokenByEmail = async (email: string) => {
   try {

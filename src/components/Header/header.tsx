@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { HeaderInfo, HeaderInfoMobile } from "./anime-manga-headers";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+import AnimeMangaHeader from "./anime-manga-header";
+import AnimeMangaHeaderMobile from "./anime-manga-header-mobile";
 
 interface HeaderProps {
   bannerImage?: string;
   headerImage: string;
   title: string;
   description: string;
+  id: string;
 }
 
 const Header = ({
@@ -16,6 +18,7 @@ const Header = ({
   description,
   headerImage,
   title,
+  id,
 }: HeaderProps) => {
   const isMobile = useMediaQuery("(max-width: 640px)");
 
@@ -34,13 +37,15 @@ const Header = ({
         )}
       </div>
       {isMobile ? (
-        <HeaderInfoMobile
+        <AnimeMangaHeaderMobile
+          id={id}
           title={title}
           headerImage={headerImage}
           description={description}
         />
       ) : (
-        <HeaderInfo
+        <AnimeMangaHeader
+          id={id}
           title={title}
           headerImage={headerImage}
           description={description}
