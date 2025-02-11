@@ -129,7 +129,10 @@ const AnimeContent = () => {
           {isDeskop ? (
             <AnimeMangaContents data={top?.Page.media.slice(0, 10) || []} />
           ) : (
-            <AnimeMangaColumns data={top?.Page.media.slice(0, 10) || []} />
+            <AnimeMangaColumns
+              data={top?.Page.media.slice(0, 10) || []}
+              path="anime"
+            />
           )}
         </>
       ) : (

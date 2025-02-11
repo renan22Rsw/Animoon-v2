@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { addAnimesToList } from "@/actions/animoon/add-datas-to-list";
+import {
+  addAnimesToList,
+  addMangasToList,
+} from "@/actions/animoon/add-datas-to-list";
 import { toast } from "@/hooks/use-toast";
 import { useTransition } from "react";
+import { usePathname } from "next/navigation";
 
 interface HeaderInfoMobileProps {
   id: string;
@@ -18,21 +22,52 @@ const AnimeMangaHeaderMobile = ({
   headerImage,
 }: HeaderInfoMobileProps) => {
   const [isPending, startTransition] = useTransition();
+  const pathName = usePathname().split("/")[1];
 
-  const handleAddToList = () => {
+  const handleAddAnimeToList = () => {
     startTransition(() => {
       addAnimesToList(title, headerImage, id)
         .then((res) => {
           toast({
-            title: res.sucess,
+            title: res.success,
             description: "Congrats! You have added this anime to your list",
           });
-
-          toast({
-            title: res.error,
-            variant: "destructive",
-          });
+          if (res.error) {
+            toast({
+              variant: "destructive",
+              title: res.error,
+              description: "Please try again",
+            });
+          }
         })
+
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
+  };
+
+  const handleAddMangaToList = () => {
+    startTransition(() => {
+      addMangasToList(title, headerImage, id)
+        .then((res) => {
+          toast({
+            title: res.success,
+            description: "Congrats! You have added this manga to your list",
+          });
+          if (res.error) {
+            toast({
+              variant: "destructive",
+              title: res.error,
+              description: "Please try again",
+            });
+          }
+        })
+
         .catch((res) => {
           toast({
             variant: "destructive",
@@ -55,7 +90,9 @@ const AnimeMangaHeaderMobile = ({
         <h2 className="font-bold">{title}</h2>
         <Button
           variant={"outline"}
-          onClick={handleAddToList}
+          onClick={
+            pathName === "anime" ? handleAddAnimeToList : handleAddMangaToList
+          }
           disabled={isPending}
         >
           Add List

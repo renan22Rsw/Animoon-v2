@@ -1,12 +1,14 @@
 import { AnimeMainPage } from "@/types/animes/anime-main-page";
 import { MangaMainPage } from "@/types/mangas/manga-main-page";
 import Image from "next/image";
+import Link from "next/link";
 
 type AnimeMangaColumnsProps = {
   data: (AnimeMainPage & MangaMainPage)[];
+  path: string;
 };
 
-const AnimeMangaColumns = ({ data }: AnimeMangaColumnsProps) => {
+const AnimeMangaColumns = ({ data, path }: AnimeMangaColumnsProps) => {
   return (
     <section className="relative flex flex-col items-center justify-center">
       {data.map((content, index) => (
@@ -23,9 +25,11 @@ const AnimeMangaColumns = ({ data }: AnimeMangaColumnsProps) => {
               height={70}
               className="p-2"
             />
-            <h4 className="max-w-[350px] font-semibold">
-              {content.title.romaji}
-            </h4>
+            <Link href={`/${path}/${content.id}`}>
+              <h4 className="max-w-[350px] font-semibold">
+                {content.title.romaji}
+              </h4>
+            </Link>
           </div>
           <div className="w-full rounded-sm">
             <div className="grid grid-cols-3 font-bold text-foreground">

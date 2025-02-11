@@ -25,7 +25,7 @@ export const AnimeMangaHeader = ({
 }: HeaderInfoProps) => {
   const [isPending, startTransition] = useTransition();
   const pathName = usePathname().split("/")[1];
-  console.log(pathName);
+
   const handleAddAnimeToList = () => {
     startTransition(() => {
       addAnimesToList(title, headerImage, id)
