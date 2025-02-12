@@ -1,10 +1,8 @@
 "use client";
 
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import {
-  CharacterOrStaffHeader,
-  CharacterOrStaffHeaderMobile,
-} from "./character-staff-headers";
+import { CharacterOrStaffHeader } from "./character-staff-header";
+import { CharacterOrStaffHeaderMobile } from "./character-staff-header-mobile";
 
 interface SecondHeaderProps {
   name: {

@@ -24,7 +24,7 @@ const DataList = ({ datas, path }: DataListProps) => {
 
   return (
     <main className="px-4">
-      <div className="mx-auto my-4 w-full max-w-[1000px] rounded-md">
+      <div className="mx-auto my-4 max-w-[1000px] rounded-md">
         <div className="flex justify-between">
           <h3 className="p-4 font-bold">Title</h3>
           <h3 className="p-4 font-bold">Delete</h3>

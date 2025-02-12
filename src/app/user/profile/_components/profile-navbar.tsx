@@ -22,20 +22,14 @@ const ProfileNavbar = () => {
 
     {
       id: 4,
-      item: "CharacterList",
-      link: "/user/profile/character-list",
-    },
-
-    {
-      id: 5,
-      item: "StaffList",
-      link: "/user/profile/staff-list",
+      item: "Favorites",
+      link: "/user/profile/favorites",
     },
   ];
 
   return (
     <div>
-      <ul className="flex h-[70px] items-center justify-center space-x-2 bg-[#EBF0F4] dark:bg-primary-foreground md:space-x-8">
+      <ul className="flex h-[70px] items-center justify-center space-x-2 bg-[#EBF0F4] dark:bg-primary-foreground sm:space-x-4 md:space-x-8">
         {navItems.map((item) => (
           <Link key={item.id} href={item.link}>
             <li className="text-xs font-bold sm:text-base">{item.item}</li>
