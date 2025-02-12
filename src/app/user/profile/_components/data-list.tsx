@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { FaTrashAlt } from "react-icons/fa";
 
 interface datas {
@@ -19,8 +18,7 @@ interface DataListProps {
 }
 
 const DataList = ({ datas, path }: DataListProps) => {
-  const pathName = usePathname().split("/")[3];
-  console.log(pathName);
+  // const pathName = usePathname().split("/")[3];
 
   return (
     <main className="px-4">

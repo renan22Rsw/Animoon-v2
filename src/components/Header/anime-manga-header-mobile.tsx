@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
-import {
-  addAnimesToList,
-  addMangasToList,
-} from "@/actions/animoon/add-datas-to-list";
+
 import { toast } from "@/hooks/use-toast";
 import { useTransition } from "react";
 import { usePathname } from "next/navigation";
+import { addAnimesToList } from "@/actions/animoon/animes/add-animes-to-list";
+import { addMangasToList } from "@/actions/animoon/mangas/add-mangas-to-list";
 
 interface HeaderInfoMobileProps {
   id: string;
@@ -22,7 +21,7 @@ const AnimeMangaHeaderMobile = ({
   headerImage,
 }: HeaderInfoMobileProps) => {
   const [isPending, startTransition] = useTransition();
-  const pathName = usePathname().split("/")[1];
+  const pathName = usePathname()?.split("/")[1];
 
   const handleAddAnimeToList = () => {
     startTransition(() => {

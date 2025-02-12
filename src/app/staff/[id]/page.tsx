@@ -5,7 +5,7 @@ import { StaffByIdResponse } from "@/types/staffs/staff-by-id";
 
 interface StaffProps {
   params: {
-    id: number;
+    id: string;
   };
 }
 
@@ -25,6 +25,7 @@ const Staff = async ({ params }: StaffProps) => {
     }
 
     const {
+      
       name,
       age,
       bloodType,
@@ -38,6 +39,7 @@ const Staff = async ({ params }: StaffProps) => {
 
     return (
       <SecondHeader
+      id={id}
         name={{
           userPreferred: name.full,
           native: name.native,

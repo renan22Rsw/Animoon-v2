@@ -5,7 +5,7 @@ import { CharacterByIdResponse } from "@/types/characters/character-by-id";
 
 interface CharacterProps {
   params: {
-    id: number;
+    id: string;
   };
 }
 
@@ -31,6 +31,7 @@ const Character = async ({ params }: CharacterProps) => {
     return (
       <>
         <SecondHeader
+          id={id}
           name={name}
           image={image.large}
           description={description.replace(/[^a-zA-Z ]/g, "")}

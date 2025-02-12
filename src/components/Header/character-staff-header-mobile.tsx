@@ -1,8 +1,14 @@
 import Image from "next/image";
 import { CharacterOrStaffHeaderProps } from "./character-staff-header";
 import { Button } from "../ui/button";
+import { addCharactersToList } from "@/actions/animoon/characters/add-characters-to-list";
+import { toast } from "@/hooks/use-toast";
+import { useTransition } from "react";
+import { addStaffToList } from "@/actions/animoon/staffs/add-staff-to-list";
+import { usePathname } from "next/navigation";
 
 export const CharacterOrStaffHeaderMobile = ({
+  id,
   name,
   image,
   dateOfBirth,
@@ -12,8 +18,65 @@ export const CharacterOrStaffHeaderMobile = ({
   bloodType,
   homeTown,
 }: CharacterOrStaffHeaderProps) => {
+  const [isPending, startTransition] = useTransition();
+  const pathName = usePathname()?.split("/")[1];
+
+  const handleAddCharacterToFavorites = () => {
+    startTransition(() => {
+      addCharactersToList(name.userPreferred, image, id)
+        .then((res) => {
+          toast({
+            title: res.success,
+            description: "Congrats! You have added this character to your list",
+          });
+          if (res.error) {
+            toast({
+              variant: "destructive",
+              title: res.error,
+              description: "Please try again",
+            });
+          }
+        })
+
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
+  };
+
+  const handleAddStaffToFavorites = () => {
+    startTransition(() => {
+      addStaffToList(name.userPreferred, image, id)
+        .then((res) => {
+          toast({
+            title: res.success,
+            description: "Congrats! You have added this staff to your list",
+          });
+          if (res.error) {
+            toast({
+              variant: "destructive",
+              title: res.error,
+              description: "Please try again",
+            });
+          }
+        })
+
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
+  };
+
   return (
-    <header className="sm: w-full bg-[#EBF0F4] sm:h-[250px] sm:dark:bg-primary-foreground">
+    <header className="sm: w-full bg-[#EBF0F4] dark:bg-primary-foreground sm:h-[250px]">
       <div className="flex flex-col items-center space-y-4">
         <h2 className="text-2xl font-bold">
           {name.userPreferred ? name.userPreferred : name.alternative}
@@ -35,7 +98,17 @@ export const CharacterOrStaffHeaderMobile = ({
           className="rounded-md"
         />
 
-        <Button variant={"outline"}>Add To Favorites</Button>
+        <Button
+          variant={"outline"}
+          onClick={
+            pathName === "character"
+              ? handleAddCharacterToFavorites
+              : handleAddStaffToFavorites
+          }
+          disabled={isPending}
+        >
+          Add To Favorites
+        </Button>
       </div>
       <section className="px-4">
         {dateOfBirth.day === null ||

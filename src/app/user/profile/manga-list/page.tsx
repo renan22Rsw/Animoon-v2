@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { auth } from "../../../../../auth";
 import UserProfileHeader from "../_components/profile-header";
 import DataList from "../_components/data-list";
-import { getMangasDatas } from "@/data/animoon/getDatas";
+import { getMangasDatas } from "@/data/animoon/mangas/get-mangas";
 
 const MangaListPage = async () => {
   const session = await auth();

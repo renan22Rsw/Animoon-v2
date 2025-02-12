@@ -5,6 +5,7 @@ import { CharacterOrStaffHeader } from "./character-staff-header";
 import { CharacterOrStaffHeaderMobile } from "./character-staff-header-mobile";
 
 interface SecondHeaderProps {
+  id: string;
   name: {
     userPreferred: string;
     native: string;
@@ -25,6 +26,7 @@ interface SecondHeaderProps {
 }
 
 const SecondHeader = ({
+  id,
   name,
   image,
   dateOfBirth,
@@ -40,6 +42,7 @@ const SecondHeader = ({
     <>
       {isMobile ? (
         <CharacterOrStaffHeaderMobile
+          id={id}
           name={name}
           image={image}
           description={
@@ -53,6 +56,7 @@ const SecondHeader = ({
         />
       ) : (
         <CharacterOrStaffHeader
+          id={id}
           name={name}
           image={image}
           description={
