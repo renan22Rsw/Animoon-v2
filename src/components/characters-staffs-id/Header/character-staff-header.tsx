@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { addCharactersToList } from "@/actions/animoon/characters/add-characters-to-list";
 import { useTransition } from "react";
 import { toast } from "@/hooks/use-toast";

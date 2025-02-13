@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useMediaQuery } from "../../../hooks/useMediaQuery";
 import AnimeMangaHeader from "./anime-manga-header";
 import AnimeMangaHeaderMobile from "./anime-manga-header-mobile";
 

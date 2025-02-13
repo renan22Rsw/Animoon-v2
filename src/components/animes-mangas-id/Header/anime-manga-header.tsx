@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { useTransition } from "react";
 import { toast } from "@/hooks/use-toast";
 import { usePathname } from "next/navigation";

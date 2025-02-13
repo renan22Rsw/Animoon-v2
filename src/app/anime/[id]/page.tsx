@@ -1,13 +1,13 @@
-import CharacterContent from "@/components/CharacterContent/character-content";
-import GridContainer from "@/components/GridContainer/grid-container";
-import Header from "@/components/Header/header";
-import InfoColumns from "@/components/InfoColumns/info-columns";
-import Recomendations from "@/components/Recomendations/recomendations";
-import StaffContent from "@/components/StaffContent/staff-content";
-import SubTitle from "@/components/SubTitle/sub-title";
-import Trailer from "@/components/Trailer/trailer";
-import SubContainer from "@/components/SubContainer/sub-container";
-import Container from "@/components/Container/container";
+import CharacterContent from "@/components/animes-mangas-id/CharacterContent/character-content";
+import GridContainer from "@/components/animes-mangas-id/GridContainer/grid-container";
+import Header from "@/components/animes-mangas-id/Header/header";
+import InfoColumns from "@/components/animes-mangas-id/InfoColumns/info-columns";
+import Recomendations from "@/components/animes-mangas-id/Recomendations/recomendations";
+import StaffContent from "@/components/animes-mangas-id/StaffContent/staff-content";
+import SubTitle from "@/components/animes-mangas-id/SubTitle/sub-title";
+import Trailer from "@/components/animes-mangas-id/Trailer/trailer";
+import SubContainer from "@/components/animes-mangas-id/SubContainer/sub-container";
+import Container from "@/components/animes-mangas-id/Container/container";
 
 import { getClient } from "@/lib/ApolloClient";
 import { getAnimeByIdResponse } from "@/types/animes/anime-by-id";

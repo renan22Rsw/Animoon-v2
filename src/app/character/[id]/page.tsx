@@ -1,4 +1,4 @@
-import SecondHeader from "@/components/Header/second-header";
+import Header from "@/components/characters-staffs-id/Header/header";
 import { getClient } from "@/lib/ApolloClient";
 import { GET_CHARACTER_BY_ID } from "@/queries/characters/character-by-id";
 import { CharacterByIdResponse } from "@/types/characters/character-by-id";
@@ -30,7 +30,7 @@ const Character = async ({ params }: CharacterProps) => {
 
     return (
       <>
-        <SecondHeader
+        <Header
           id={id}
           name={name}
           image={image.large}

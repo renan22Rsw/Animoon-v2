@@ -15,9 +15,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import SuccessMessage from "@/components/Authentication/success-message";
+import SuccessMessage from "@/components/Authentication/Message/success-message";
 import { useState, useTransition } from "react";
-import ErrorMessage from "@/components/Authentication/error-message";
+import ErrorMessage from "@/components/Authentication/Message/error-message";
 import { createUser } from "@/actions/auth/register";
 
 const SignupForm = () => {

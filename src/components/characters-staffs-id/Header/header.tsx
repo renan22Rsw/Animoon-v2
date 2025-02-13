@@ -4,7 +4,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { CharacterOrStaffHeader } from "./character-staff-header";
 import { CharacterOrStaffHeaderMobile } from "./character-staff-header-mobile";
 
-interface SecondHeaderProps {
+interface HeaderProps {
   id: string;
   name: {
     userPreferred: string;
@@ -25,7 +25,7 @@ interface SecondHeaderProps {
   yearsActive?: number[];
 }
 
-const SecondHeader = ({
+const Header = ({
   id,
   name,
   image,
@@ -35,7 +35,7 @@ const SecondHeader = ({
   age,
   bloodType,
   homeTown,
-}: SecondHeaderProps) => {
+}: HeaderProps) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
@@ -73,4 +73,4 @@ const SecondHeader = ({
   );
 };
 
-export default SecondHeader;
+export default Header;

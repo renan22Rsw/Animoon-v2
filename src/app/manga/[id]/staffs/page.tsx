@@ -1,9 +1,9 @@
-import Container from "@/components/Container/container";
-import GridContainer from "@/components/GridContainer/grid-container";
-import Header from "@/components/Header/header";
-import InfoColumns from "@/components/InfoColumns/info-columns";
-import StaffContent from "@/components/StaffContent/staff-content";
-import SubContainer from "@/components/SubContainer/sub-container";
+import Container from "@/components/animes-mangas-id/Container/container";
+import GridContainer from "@/components/animes-mangas-id/GridContainer/grid-container";
+import Header from "@/components/animes-mangas-id/Header/header";
+import InfoColumns from "@/components/animes-mangas-id/InfoColumns/info-columns";
+import StaffContent from "@/components/animes-mangas-id/StaffContent/staff-content";
+import SubContainer from "@/components/animes-mangas-id/SubContainer/sub-container";
 import { getClient } from "@/lib/ApolloClient";
 import { GET_MANGA_BY_ID } from "@/queries/mangas/manga-by-id";
 import { getMangaByIdResponse } from "@/types/mangas/manga-by-id";

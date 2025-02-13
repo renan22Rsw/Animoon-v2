@@ -1,6 +1,6 @@
 "use client";
 
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useMediaQuery } from "../../../hooks/useMediaQuery";
 import RecomendationsMobile from "./recomendations-mobile";
 import RecomendationsDesktop from "./recomendationsDesktop";
 

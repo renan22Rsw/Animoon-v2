@@ -1,4 +1,4 @@
-import SecondHeader from "@/components/Header/second-header";
+import SecondHeader from "@/components/characters-staffs-id/Header/header";
 import { getClient } from "@/lib/ApolloClient";
 import { GET_STAFF_BY_ID } from "@/queries/staffs/staff-by-id";
 import { StaffByIdResponse } from "@/types/staffs/staff-by-id";
@@ -25,7 +25,6 @@ const Staff = async ({ params }: StaffProps) => {
     }
 
     const {
-      
       name,
       age,
       bloodType,
@@ -39,7 +38,7 @@ const Staff = async ({ params }: StaffProps) => {
 
     return (
       <SecondHeader
-      id={id}
+        id={id}
         name={{
           userPreferred: name.full,
           native: name.native,

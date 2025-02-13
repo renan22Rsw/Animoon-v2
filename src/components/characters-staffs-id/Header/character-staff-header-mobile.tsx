@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { CharacterOrStaffHeaderProps } from "./character-staff-header";
-import { Button } from "../ui/button";
+
+import { Button } from "../../ui/button";
 import { addCharactersToList } from "@/actions/animoon/characters/add-characters-to-list";
 import { toast } from "@/hooks/use-toast";
 import { useTransition } from "react";
 import { addStaffToList } from "@/actions/animoon/staffs/add-staff-to-list";
 import { usePathname } from "next/navigation";
+import { CharacterOrStaffHeaderProps } from "./character-staff-header";
 
 export const CharacterOrStaffHeaderMobile = ({
   id,

@@ -16,8 +16,8 @@ import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState, useTransition } from "react";
-import SuccessMessage from "@/components/Authentication/success-message";
-import ErrorMessage from "@/components/Authentication/error-message";
+import SuccessMessage from "@/components/Authentication/Message/success-message";
+import ErrorMessage from "@/components/Authentication/Message/error-message";
 import { login } from "@/actions/auth/login";
 
 const LoginForm = () => {
