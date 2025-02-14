@@ -12,7 +12,7 @@ export const addStaffToList = async (
 
   if (!session?.user?.id) {
     return {
-      error: "Unauthorized",
+      error: "You must be logged in to add staffs to your list",
     };
   }
 

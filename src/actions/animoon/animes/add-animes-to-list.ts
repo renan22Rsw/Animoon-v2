@@ -12,7 +12,7 @@ export const addAnimesToList = async (
 
   if (!session?.user?.id) {
     return {
-      error: "Unauthorized",
+      error: "You must be logged in to add animes to your list",
     };
   }
 

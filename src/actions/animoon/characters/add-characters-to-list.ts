@@ -11,7 +11,7 @@ export const addCharactersToList = async (
 
   if (!session?.user?.id) {
     return {
-      error: "Unauthorized",
+      error: "You must be logged in to add characters to your list",
     };
   }
 

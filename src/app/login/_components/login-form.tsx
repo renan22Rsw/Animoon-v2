@@ -1,6 +1,5 @@
 "use client";
 
-import CardWrapper from "@/components/Authentication/card-wrapper";
 import {
   Form,
   FormControl,
@@ -19,6 +18,7 @@ import { useState, useTransition } from "react";
 import SuccessMessage from "@/components/Authentication/Message/success-message";
 import ErrorMessage from "@/components/Authentication/Message/error-message";
 import { login } from "@/actions/auth/login";
+import CardWrapper from "@/components/Authentication/Card/card-wrapper";
 
 const LoginForm = () => {
   const [success, setSuccess] = useState<string | null>();

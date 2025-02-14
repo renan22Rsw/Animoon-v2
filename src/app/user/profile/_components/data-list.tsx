@@ -1,11 +1,16 @@
 "use client";
 
+import { deleteAnimesFromList } from "@/actions/animoon/animes/delete-animes-from-list";
+import { deleteMangasFromList } from "@/actions/animoon/mangas/delete-mangas-from-list";
+import { toast } from "@/hooks/use-toast";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { startTransition } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
 interface datas {
-  id: number;
+  id: string;
   animeId: string;
   mangaId: string;
   title: string;
@@ -18,7 +23,46 @@ interface DataListProps {
 }
 
 const DataList = ({ datas, path }: DataListProps) => {
-  // const pathName = usePathname().split("/")[3];
+  const pathName = usePathname().split("/")[3];
+  console.log(pathName);
+
+  const handleDeleteAnimes = async (id: string) => {
+    startTransition(() => {
+      deleteAnimesFromList(id)
+        .then(() => {
+          toast({
+            title: "Anime deleted from your list",
+            description: "Congrats! You have deleted this anime from your list",
+          });
+        })
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
+  };
+
+  const handleDeleteMangas = async (id: string) => {
+    startTransition(() => {
+      deleteMangasFromList(id)
+        .then(() => {
+          toast({
+            title: "Manga deleted from your list",
+            description: "Congrats! You have deleted this manga from your list",
+          });
+        })
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
+  };
 
   return (
     <main className="px-4">
@@ -44,7 +88,14 @@ const DataList = ({ datas, path }: DataListProps) => {
               </Link>
             </span>
             <div className="flex cursor-pointer items-center px-4">
-              <FaTrashAlt size={20} onClick={() => console.log(title)} />
+              <FaTrashAlt
+                size={20}
+                onClick={() =>
+                  pathName === "anime-list"
+                    ? handleDeleteAnimes(id)
+                    : handleDeleteMangas(id)
+                }
+              />
             </div>
           </div>
         ))}

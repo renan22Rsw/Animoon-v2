@@ -5,12 +5,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "@/components/ui/card";
 import CardCotaniner from "./card-container";
+import SocialMedia from "../social-media";
 import CardLink from "./card-link";
-import HeaderDescription from "./header-description";
-import HeaderTitle from "./header-title";
-import SocialMedia from "./social-media";
+import HeaderTitle from "../Header/header-title";
+import HeaderDescription from "../Header/header-description";
 
 interface CardWrapperProps {
   children: React.ReactNode;

@@ -12,7 +12,7 @@ export const addMangasToList = async (
 
   if (!session?.user?.id) {
     return {
-      error: "Unauthorized",
+      error: "You must be logged in to add mangas to your list",
     };
   }
 
