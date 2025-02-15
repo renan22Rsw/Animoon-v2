@@ -17,8 +17,9 @@ import {
 
 import { SunIcon, MoonIcon, ShadowIcon } from "@radix-ui/react-icons";
 import UserPicture from "../User/user-picture";
-import { auth, signOut } from "../../services/auth";
+import { auth, signOut } from "@/services/auth";
 import Link from "next/link";
+import ButttonTheme from "../theme/button-theme";
 
 const UserIcon = async () => {
   const session = await auth();
@@ -58,11 +59,11 @@ const UserIcon = async () => {
               <DropdownMenuSubContent>
                 <DropdownMenuItem>
                   <SunIcon />
-                  <Button variant={"ghost"}>Light</Button>
+                  <ButttonTheme theme="light">Light</ButttonTheme>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <MoonIcon />
-                  <Button variant={"ghost"}>Dark</Button>
+                  <ButttonTheme theme="dark">Dark</ButttonTheme>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
               </DropdownMenuSubContent>

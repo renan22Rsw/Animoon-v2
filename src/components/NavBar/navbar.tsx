@@ -4,8 +4,9 @@ import { navItems } from "./nav-items";
 
 import UserIcon from "./user-icon";
 import Link from "next/link";
-import { auth } from "../../services/auth";
+
 import LoginButton from "../Authentication/login-button";
+import { auth } from "@/services/auth";
 const NavBar = async () => {
   const session = await auth();
 
