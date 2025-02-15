@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { signIn } from "../../../auth";
+import { signIn } from "../../services/auth";
 import { LoginSchema } from "@/schemas";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 

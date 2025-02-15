@@ -1,4 +1,4 @@
-import { auth } from "../../../../../auth";
+import { auth } from "../../../../services/auth";
 import FavoritesList from "./_components/favorites-list";
 import UserProfileHeader from "../_components/profile-header";
 

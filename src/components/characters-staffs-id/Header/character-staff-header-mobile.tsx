@@ -112,17 +112,11 @@ export const CharacterOrStaffHeaderMobile = ({
         </Button>
       </div>
       <section className="px-4">
-        {dateOfBirth.day === null ||
-        undefined ||
-        dateOfBirth.month === null ||
-        undefined ? (
-          ""
-        ) : (
+        {dateOfBirth.day && dateOfBirth.month && (
           <h4 className="font-semibold">
             Birthday: {dateOfBirth.month + "/" + dateOfBirth.day}
           </h4>
         )}
-
         {age && (
           <h4 className="font-semibold">
             Age: <span className="font-thin">{age}</span>

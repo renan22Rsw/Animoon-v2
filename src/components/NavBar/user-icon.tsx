@@ -17,7 +17,7 @@ import {
 
 import { SunIcon, MoonIcon, ShadowIcon } from "@radix-ui/react-icons";
 import UserPicture from "../User/user-picture";
-import { auth, signOut } from "../../../auth";
+import { auth, signOut } from "../../services/auth";
 import Link from "next/link";
 
 const UserIcon = async () => {

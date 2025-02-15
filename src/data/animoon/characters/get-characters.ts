@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma as db } from "@/database/db";
-import { auth } from "../../../../auth";
+import { auth } from "../../../services/auth";
 
 export const getCharactersDatas = async () => {
   const session = await auth();

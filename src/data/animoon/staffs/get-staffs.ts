@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma as db } from "@/database/db";
-import { auth } from "../../../../auth";
+import { auth } from "../../../services/auth";
 
 const getStaffsDatas = async () => {
   const session = await auth();
@@ -12,7 +12,7 @@ const getStaffsDatas = async () => {
         userId: session?.user?.id,
       },
     });
-    return staffs
+    return staffs;
   } catch (error) {
     console.log(error);
   }

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { auth } from "../../../../auth";
+import { auth } from "../../../services/auth";
 import UserProfileHeader from "./_components/profile-header";
 import ProfileInfo from "./_components/profile-info";
 import { getAnimesLength } from "@/data/animoon/animes/get-animes-length";

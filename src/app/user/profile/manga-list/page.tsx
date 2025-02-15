@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { auth } from "../../../../../auth";
+import { auth } from "../../../../services/auth";
 import UserProfileHeader from "../_components/profile-header";
 import DataList from "../_components/data-list";
 import { getMangasDatas } from "@/data/animoon/mangas/get-mangas";

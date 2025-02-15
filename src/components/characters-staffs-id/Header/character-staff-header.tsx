@@ -136,7 +136,7 @@ export const CharacterOrStaffHeader = ({
 
           <div className="h-[200px]">
             <div className="pt-10">
-              {dateOfBirth && (
+              {dateOfBirth.day && dateOfBirth.month && (
                 <h5 className="font-bold">
                   Birthday:{" "}
                   <span className="font-thin">
