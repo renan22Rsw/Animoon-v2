@@ -61,11 +61,29 @@ const InfoColumns = ({
             </>
           )}
 
-          <h5 className="font-bold">Avarage Score</h5>
-          <p className="font-thin">{averageScore}%</p>
+          {averageScore ? (
+            <>
+              <h5 className="font-bold">Avarage Score</h5>
+              <p className="font-thin">{averageScore}%</p>
+            </>
+          ) : (
+            <>
+              <h5 className="font-bold">Avarage Score</h5>
+              <p className="font-thin">Unavailable</p>
+            </>
+          )}
 
-          <h5 className="font-bold">Mean Score</h5>
-          <p className="font-thin">{meanScore}%</p>
+          {meanScore ? (
+            <>
+              <h5 className="font-bold">Mean Score</h5>
+              <p className="font-thin">{meanScore}%</p>
+            </>
+          ) : (
+            <>
+              <h5 className="font-bold">Mean Score</h5>
+              <p className="font-thin">Unavailable</p>
+            </>
+          )}
 
           <h5 className="font-bold">Genres</h5>
           <ul>

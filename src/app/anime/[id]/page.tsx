@@ -136,7 +136,7 @@ const AnimePageId = async ({ params }: AnimePageIdProps) => {
                 <Trailer id={trailer?.id} />
               </>
             )}
-            {recommendations && (
+            {recommendations.nodes.length > 0 && (
               <Recomendations
                 recomendation={[
                   ...recommendations?.nodes.map((recomendation) => ({

@@ -47,7 +47,7 @@ const CharacterContent = ({
           />
         </Link>
         <div className="mr-2 flex flex-col justify-between px-1 py-2">
-          <h4 className="text-xs font-semibold">{name}</h4>
+          <h4 className="max-w-[120px] text-xs font-semibold">{name}</h4>
           <p className="mx-1 text-xs">{role}</p>
         </div>
       </div>

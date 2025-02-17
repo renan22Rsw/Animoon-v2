@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import NoBannerImage from "@/../public/no-banner-image.jpg";
 import { useMediaQuery } from "../../../hooks/useMediaQuery";
 import AnimeMangaHeader from "./anime-manga-header";
 import AnimeMangaHeaderMobile from "./anime-manga-header-mobile";
@@ -25,10 +26,19 @@ const Header = ({
   return (
     <section className="relative mx-auto flex h-[700px] flex-col items-center bg-[#EBF0F4] dark:bg-primary-foreground">
       <div className="flex w-full justify-center">
-        {bannerImage && (
+        {bannerImage ? (
           <Image
             src={bannerImage as string}
             alt="banner-image"
+            quality={100}
+            width={1000}
+            height={700}
+            className="h-[200px] w-full sm:h-[350px] lg:h-[400px]"
+          />
+        ) : (
+          <Image
+            src={NoBannerImage}
+            alt="no-banner-image"
             quality={100}
             width={1000}
             height={700}

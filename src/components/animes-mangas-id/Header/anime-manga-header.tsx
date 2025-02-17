@@ -79,13 +79,14 @@ export const AnimeMangaHeader = ({
   };
 
   return (
-    <div className="absolute bottom-10 mx-auto flex justify-center xl:w-[88%] 2xl:w-3/5">
-      <div className="mx-6 space-y-4">
+    <div className="absolute bottom-0 mx-auto flex justify-center xl:w-[88%] 2xl:w-3/5">
+      <div className="mx-6 space-y-4 p-2">
         <Image
           src={headerImage as string}
           alt="hearder-picture"
-          width={200}
-          height={200}
+          width={300}
+          height={300}
+          className="rounded-sm"
         />
         <Button
           variant={"outline"}
@@ -99,7 +100,7 @@ export const AnimeMangaHeader = ({
         </Button>
       </div>
       <div className="mx-3 flex w-full flex-col justify-center space-y-4">
-        <h2 className="pt-4 text-start font-bold">{title}</h2>
+        <h2 className="pt-4 text-start text-2xl">{title}</h2>
         <p>{description}</p>
       </div>
     </div>

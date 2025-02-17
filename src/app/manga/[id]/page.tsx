@@ -118,7 +118,7 @@ const Manga = async ({ params }: MangasProps) => {
 
             {recommendations && (
               <>
-                {recommendations && (
+                {recommendations.nodes.length > 0 && (
                   <Recomendations
                     recomendation={[
                       ...recommendations?.nodes.map((recomendation) => ({

@@ -24,7 +24,6 @@ interface DataListProps {
 
 const DataList = ({ datas, path }: DataListProps) => {
   const pathName = usePathname().split("/")[3];
-  console.log(pathName);
 
   const handleDeleteAnimes = async (id: string) => {
     startTransition(() => {
@@ -76,12 +75,13 @@ const DataList = ({ datas, path }: DataListProps) => {
             className="flex justify-between bg-[#EBF0F4] py-2 dark:bg-primary-foreground hover:dark:bg-zinc-400"
             key={id}
           >
-            <span className="flex space-x-2">
+            <span className="mx-2 flex space-x-2">
               <Image
                 src={image as string}
                 alt="data-list-image"
                 width={50}
                 height={50}
+                style={{ width: "auto", height: "auto" }}
               />
               <Link href={`/${path}/${animeId ? animeId : mangaId}`}>
                 <h4>{title}</h4>

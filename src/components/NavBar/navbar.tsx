@@ -13,11 +13,8 @@ const NavBar = async () => {
   return (
     <nav className="my-6 flex w-full items-center justify-between px-6 lg:justify-end">
       <div className="flex items-center space-x-1">
-        <Image src={AniMoonIcon} alt="Animoon-Icon" width={32} height={32} />
         <Link href={"/"}>
-          <h1 className="text-2xl font-bold text-secondary-foreground">
-            Animoon
-          </h1>
+          <Image src={AniMoonIcon} alt="Animoon-Icon" width={50} height={50} />
         </Link>
       </div>
       <ul className="hidden w-full items-center justify-center space-x-6 lg:flex">

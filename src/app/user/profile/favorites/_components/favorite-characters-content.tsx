@@ -56,6 +56,7 @@ const FavoritesCharacterContent = ({
                     height={80}
                     alt="favorite-image"
                     className="cursor-pointer rounded-md"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </Link>
 
@@ -65,7 +66,9 @@ const FavoritesCharacterContent = ({
                   onClick={() => handleDeleteCharacters(id)}
                 />
               </div>
-              <h5 className="py-1 text-center text-sm">{title}</h5>
+              <h5 className="py-1 text-center text-sm">
+                {title.length > 20 ? title.substring(0, 15) + "..." : title}
+              </h5>
             </div>
           ))}
         </div>

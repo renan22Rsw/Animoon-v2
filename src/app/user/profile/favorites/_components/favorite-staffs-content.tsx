@@ -53,6 +53,7 @@ const FavoritesStaffContent = ({ datas }: FavoritesStaffsContentProps) => {
                     height={80}
                     alt="favorite-image"
                     className="cursor-pointer rounded-md"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </Link>
 

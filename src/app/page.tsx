@@ -1,13 +1,13 @@
-import { auth } from "@/services/auth";
+"use client";
 
-const Home = async () => {
-  const session = await auth();
+import HomePageMobile from "@/components/HomePage/home-page-mobile";
+import HomePageDesktop from "@/components/HomePage/home-page-desktop";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
-  return (
-    <div>
-      <h1 className="text-center text-3xl font-bold">{session?.user?.name}</h1>
-    </div>
-  );
+const Home = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+
+  return <>{isMobile ? <HomePageMobile /> : <HomePageDesktop />}</>;
 };
 
 export default Home;
