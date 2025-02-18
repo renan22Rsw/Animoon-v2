@@ -20,3 +20,21 @@ export const LoginSchema = z.object({
     message: "Password must be at least 8 characters",
   }),
 });
+
+export const usernameSchema = z.object({
+  username: z.string().min(4, {
+    message: "Username must be at least 4 characters",
+  }),
+});
+
+export const emailSchema = z.object({
+  email: z.string().email({
+    message: "invalid email",
+  }),
+});
+
+export const passwordSchema = z.object({
+  password: z.string().min(8, {
+    message: "Password must be at least 8 characters",
+  }),
+});

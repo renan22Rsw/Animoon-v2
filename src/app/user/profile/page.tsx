@@ -11,6 +11,7 @@ const UserProfilePage = async () => {
   const animesLenght = await getAnimesLength();
   const mangasLenght = await getMangasLength();
   const favoritesLenght = await getFavoritesLength();
+
   if (!session?.user) {
     redirect("/login");
   }
