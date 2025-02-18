@@ -15,17 +15,41 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { usernameSchema } from "@/schemas";
+import { useTransition } from "react";
+import { updateUsername } from "@/actions/auth/update-username";
+import { toast } from "@/hooks/use-toast";
 
-const UserNameForm = () => {
+interface userNameProps {
+  username: string;
+}
+
+const UserNameForm = ({ username }: userNameProps) => {
+  const [isPending, startTransition] = useTransition();
+
   const form = useForm<z.infer<typeof usernameSchema>>({
     resolver: zodResolver(usernameSchema),
     defaultValues: {
-      username: "",
+      username: username,
     },
   });
 
   function onSubmit(values: z.infer<typeof usernameSchema>) {
-    console.log(values);
+    startTransition(() => {
+      updateUsername(values.username)
+        .then((res) => {
+          toast({
+            title: res?.success as string,
+            description: "Congrats! You have updated your username",
+          });
+        })
+        .catch((res) => {
+          toast({
+            variant: "destructive",
+            title: res.error,
+            description: "Please try again",
+          });
+        });
+    });
   }
 
   return (
@@ -51,7 +75,9 @@ const UserNameForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Change Username</Button>
+        <Button type="submit" disabled={isPending}>
+          Change Username
+        </Button>
       </form>
     </Form>
   );

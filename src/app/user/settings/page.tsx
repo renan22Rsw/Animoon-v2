@@ -9,7 +9,12 @@ const SettingsPage = async () => {
     redirect("/login");
   }
 
-  return <SettingsPageContent />;
+  return (
+    <SettingsPageContent
+      username={session.user.name as string}
+      email={session.user.email as string}
+    />
+  );
 };
 
 export default SettingsPage;
