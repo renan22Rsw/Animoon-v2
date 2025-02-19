@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar/navbar";
-import Footer from "@/components/Footer/footer";
-import SpeedDial from "@/components/SpeedDial/speed-dial";
-import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+import { ThemeProvider } from "../components/theme/theme-provider";
+import NavBar from "../components/NavBar/navbar";
+import { Toaster } from "../components/ui/toaster";
+import SpeedDial from "../components/SpeedDial/speed-dial";
+import Footer from "../components/Footer/footer";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
