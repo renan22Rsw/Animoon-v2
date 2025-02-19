@@ -21,7 +21,7 @@ CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "emailVerified" TIMESTAMP(3),
+    "provider" TEXT NOT NULL,
     "password" TEXT,
     "image" TEXT,
 
@@ -29,18 +29,9 @@ CREATE TABLE "User" (
 );
 
 -- CreateTable
-CREATE TABLE "users" (
-    "id" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "token" TEXT NOT NULL,
-    "expires" TIMESTAMP(3) NOT NULL,
-
-    CONSTRAINT "users_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "AnimeList" (
     "id" TEXT NOT NULL,
+    "animeId" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "image" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
@@ -51,6 +42,7 @@ CREATE TABLE "AnimeList" (
 -- CreateTable
 CREATE TABLE "MangaList" (
     "id" TEXT NOT NULL,
+    "mangaId" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "image" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
@@ -61,6 +53,7 @@ CREATE TABLE "MangaList" (
 -- CreateTable
 CREATE TABLE "CharacterList" (
     "id" TEXT NOT NULL,
+    "characterId" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "image" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
@@ -71,6 +64,7 @@ CREATE TABLE "CharacterList" (
 -- CreateTable
 CREATE TABLE "StaffList" (
     "id" TEXT NOT NULL,
+    "staffId" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "image" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
@@ -83,9 +77,6 @@ CREATE UNIQUE INDEX "accounts_provider_provider_account_id_key" ON "accounts"("p
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
-
--- CreateIndex
-CREATE UNIQUE INDEX "users_email_token_key" ON "users"("email", "token");
 
 -- AddForeignKey
 ALTER TABLE "accounts" ADD CONSTRAINT "accounts_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

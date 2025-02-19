@@ -41,6 +41,13 @@ const UserNameForm = ({ username }: userNameProps) => {
             title: res?.success as string,
             description: "Congrats! You have updated your username",
           });
+          if (res.error) {
+            toast({
+              variant: "destructive",
+              title: res.error,
+              description: "Please try again",
+            });
+          }
         })
         .catch((res) => {
           toast({

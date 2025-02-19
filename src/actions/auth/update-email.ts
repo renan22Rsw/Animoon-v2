@@ -25,6 +25,19 @@ export const updateEmail = async (email: string) => {
       };
     }
 
+    const user = await db.user.findUnique({
+      where: {
+        id: session.user?.id,
+      },
+    });
+
+    if (!user?.password) {
+      return {
+        error:
+          "Accounts logged in with Google or GitHub cannot update their email",
+      };
+    }
+
     await db.user.update({
       where: {
         id: session.user?.id,
