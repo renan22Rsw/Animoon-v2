@@ -4,7 +4,7 @@ import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 import SearchTitle from "../../_components/title";
 import AnimeMangaContents from "../../_components/anime-manga-contents";
-import usePopularAnimes from "@/hooks/animes/usePopular";
+import usePopularAnimes from "@/hooks/animes/usePopularAnimes";
 
 const PopularContent = () => {
   const { popular, popularLoading, popularError } = usePopularAnimes();

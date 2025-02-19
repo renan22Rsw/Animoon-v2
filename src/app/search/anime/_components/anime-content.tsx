@@ -9,14 +9,14 @@ import { useSearchParams } from "next/navigation";
 
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
-import useTrendingAnimes from "@/hooks/animes/useTrending";
-import usePopularNextSeasonAnimes from "@/hooks/animes/useNextSeason";
-import usePopularAnimes from "@/hooks/animes/usePopular";
-import useTop10Animes from "@/hooks/animes/useTop";
-import useSearchAnimes from "@/hooks/animes/useSearch";
-import useUpcomingAnimes from "@/hooks/animes/useUpcoming";
-import useGenreAnimes from "@/hooks/animes/useGenre";
-import useSearchAndGenreAnimes from "@/hooks/animes/useSearchAndGenre";
+import useGenreAnimes from "@/hooks/animes/useGenreAnimes";
+import usePopularAnimes from "@/hooks/animes/usePopularAnimes";
+import usePopularNextSeasonAnimes from "@/hooks/animes/usePopularNextSeasonAnimes";
+import useSearchAndGenreAnimes from "@/hooks/animes/useSearchAndGenreAnimes";
+import useTop10Animes from "@/hooks/animes/useTop10Animes";
+import useTrendingAnimes from "@/hooks/animes/useTrendingAnimes";
+import useUpcomingAnimes from "@/hooks/animes/useUpcomingAnimes";
+import useSearchAnime from "@/hooks/animes/useSearchAnime";
 
 const AnimeContent = () => {
   const currentYear = new Date().getFullYear();
@@ -32,7 +32,7 @@ const AnimeContent = () => {
   const { popular, popularLoading, popularError } = usePopularAnimes();
   const { top, topLoading, topError } = useTop10Animes();
 
-  const { searchData, searchLoading, searchError } = useSearchAnimes(
+  const { searchData, searchLoading, searchError } = useSearchAnime(
     animeName as string,
   );
 
