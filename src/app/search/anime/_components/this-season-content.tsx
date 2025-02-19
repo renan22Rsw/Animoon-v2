@@ -4,7 +4,7 @@ import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 import SearchTitle from "../../_components/title";
 import AnimeMangaContents from "../../_components/anime-manga-contents";
-import usePopularNextSeasonAnimes from "@/hooks/animes/usePopularNextSeasonAnimes";
+import usePopularNextSeasonAnimes from "@/hooks/animes/useNextSeason";
 
 const PopularThisSeasonContent = () => {
   const currentYear = new Date().getFullYear();

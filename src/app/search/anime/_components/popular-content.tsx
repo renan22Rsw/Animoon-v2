@@ -1,10 +1,10 @@
 "use client";
 
-import usePopularAnimes from "@/hooks/animes/usePopularAnimes";
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 import SearchTitle from "../../_components/title";
 import AnimeMangaContents from "../../_components/anime-manga-contents";
+import usePopularAnimes from "@/hooks/animes/usePopular";
 
 const PopularContent = () => {
   const { popular, popularLoading, popularError } = usePopularAnimes();
