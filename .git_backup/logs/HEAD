@@ -1,0 +1,85 @@
+0000000000000000000000000000000000000000 06ed69039cf42abdd470486aa3ede5f9622d2b87 Renan Victor <renan22rsw@gmail.com> 1736746544 -0300	commit (initial): Initial commit from Create Next App
+06ed69039cf42abdd470486aa3ede5f9622d2b87 fed296b496c34217b04c2ff1f5fdda9863a03575 Renan Victor <renan22rsw@gmail.com> 1736787917 -0300	commit: setup project
+fed296b496c34217b04c2ff1f5fdda9863a03575 0000000000000000000000000000000000000000 Renan Victor <renan22rsw@gmail.com> 1736787993 -0300	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 fed296b496c34217b04c2ff1f5fdda9863a03575 Renan Victor <renan22rsw@gmail.com> 1736787993 -0300	Branch: renamed refs/heads/master to refs/heads/main
+fed296b496c34217b04c2ff1f5fdda9863a03575 509efa9b8a19cfb1b5309bd7bd96e4896196dea0 Renan Victor <renan22rsw@gmail.com> 1736788383 -0300	pull origin main --allow-unrelated-histories: Merge made by the 'ort' strategy.
+509efa9b8a19cfb1b5309bd7bd96e4896196dea0 5824c8c520649b9aa928cc3888a7ea4afd2bc554 Renan Victor <renan22rsw@gmail.com> 1736794022 -0300	commit: feat: Navbar
+5824c8c520649b9aa928cc3888a7ea4afd2bc554 a59d3d4275c5b352a2031377f7ef2c621ae34949 Renan Victor <renan22rsw@gmail.com> 1736815173 -0300	commit: feat: Footer preview
+a59d3d4275c5b352a2031377f7ef2c621ae34949 6fe749d6fd3cc2e76368971c5c7efbc516c2dddc Renan Victor <renan22rsw@gmail.com> 1736815234 -0300	commit: feat: changing profile icon for avatar component
+6fe749d6fd3cc2e76368971c5c7efbc516c2dddc b15d83d219d71a35507e3b26edbba7de7dd52514 Renan Victor <renan22rsw@gmail.com> 1736887148 -0300	commit: feat: Speed Dial for mobile users
+b15d83d219d71a35507e3b26edbba7de7dd52514 a2b1c3b410d9861c1236f3e29a70e246e6648ac4 Renan Victor <renan22rsw@gmail.com> 1736917582 -0300	commit: feat: Input component and search/anime page
+a2b1c3b410d9861c1236f3e29a70e246e6648ac4 cdfc034585a5947c0c9b817225b39fd148001d2e Renan Victor <renan22rsw@gmail.com> 1736987049 -0300	commit: feat: SeachContent model preview
+cdfc034585a5947c0c9b817225b39fd148001d2e c2357ba87888550245b8601d137d9f3042415e97 Renan Victor <renan22rsw@gmail.com> 1737003575 -0300	commit: feat: Custom hook useMediaQuery()
+c2357ba87888550245b8601d137d9f3042415e97 a32138724252a56a632f968b1e0d67807de5a0b5 Renan Victor <renan22rsw@gmail.com> 1737068160 -0300	commit: feat: SearchColumns component
+a32138724252a56a632f968b1e0d67807de5a0b5 abf2fe09e033cdf344be66046e041749c1162825 Renan Victor <renan22rsw@gmail.com> 1737068208 -0300	commit: feat: Anime page
+abf2fe09e033cdf344be66046e041749c1162825 9f64c803e9c29d9300e52ebf8a82ada650b216b0 Renan Victor <renan22rsw@gmail.com> 1737073562 -0300	commit: feat: Select component preview
+9f64c803e9c29d9300e52ebf8a82ada650b216b0 ba38c352322bd9878576fa825ec44e5e47b6137a Renan Victor <renan22rsw@gmail.com> 1737098649 -0300	commit: Search columns preview 2.0
+ba38c352322bd9878576fa825ec44e5e47b6137a 2eb78bd199176b6c6de731b171f752528cfedcc6 Renan Victor <renan22rsw@gmail.com> 1737102292 -0300	commit: feat: pages structure
+2eb78bd199176b6c6de731b171f752528cfedcc6 edd776bc256192ebe085c012d407878f8824807e Renan Victor <renan22rsw@gmail.com> 1737155421 -0300	commit: not found page
+edd776bc256192ebe085c012d407878f8824807e 9f7f0e8af9fa1c0648b5338c82ff55a508a103c3 Renan Victor <renan22rsw@gmail.com> 1737255817 -0300	commit: feat:Header componente
+9f7f0e8af9fa1c0648b5338c82ff55a508a103c3 f77ee477e785b50784784d38a68dfbf7d0e8474a Renan Victor <renan22rsw@gmail.com> 1737432666 -0300	commit: feat: Info Columns component
+f77ee477e785b50784784d38a68dfbf7d0e8474a 8bcfa83c13bd495f2b7e29895bbc38b89a22c805 Renan Victor <renan22rsw@gmail.com> 1737432713 -0300	commit: feat: Character Content component from anime folder
+8bcfa83c13bd495f2b7e29895bbc38b89a22c805 a58b9541101b2da2e59093e9c787f5c1e873e4c8 Renan Victor <renan22rsw@gmail.com> 1737432749 -0300	commit: feat: anime page preview
+a58b9541101b2da2e59093e9c787f5c1e873e4c8 96180f6f9f64c0df22cc95cc6ad83a8761b1aae6 Renan Victor <renan22rsw@gmail.com> 1737463820 -0300	commit: feat: Trailer Component
+96180f6f9f64c0df22cc95cc6ad83a8761b1aae6 fad0771ec46d97863ff782428a1cfdad62474d7e Renan Victor <renan22rsw@gmail.com> 1737470842 -0300	commit: feat: Recomendations Component
+fad0771ec46d97863ff782428a1cfdad62474d7e 4d3a1360c7fdbf47ffab69910900c868ff768028 Renan Victor <renan22rsw@gmail.com> 1737504373 -0300	commit: feat: Anime page design
+4d3a1360c7fdbf47ffab69910900c868ff768028 4d3a1360c7fdbf47ffab69910900c868ff768028 Renan Victor <renan22rsw@gmail.com> 1737541783 -0300	checkout: moving from main to consuming-anilist-api
+4d3a1360c7fdbf47ffab69910900c868ff768028 ed652eba9b62e0b242db805e1b06c27af86d2b51 Renan Victor <renan22rsw@gmail.com> 1737606253 -0300	commit: feat: anime datas from anilist-api
+ed652eba9b62e0b242db805e1b06c27af86d2b51 641dc513d83cbc79f2c84a15489fb57f6aeb6682 Renan Victor <renan22rsw@gmail.com> 1737732019 -0300	commit: feat: loading component
+641dc513d83cbc79f2c84a15489fb57f6aeb6682 73dabbbffd2c61c2627dce0ccbdb9191ffddc725 Renan Victor <renan22rsw@gmail.com> 1737732033 -0300	commit: feat: api is not working component
+73dabbbffd2c61c2627dce0ccbdb9191ffddc725 31fad7917d86186ad9be99d2ddc0b8ccfe85b7f3 Renan Victor <renan22rsw@gmail.com> 1737732056 -0300	commit: feat: search for contents function
+31fad7917d86186ad9be99d2ddc0b8ccfe85b7f3 908d2d6f947500bc50ac725b9464633f41e80dec Renan Victor <renan22rsw@gmail.com> 1737732088 -0300	commit: feat: animes hooks for seearching
+908d2d6f947500bc50ac725b9464633f41e80dec 130d7ae3e2fffec3e64d3693759be43ec7caf088 Renan Victor <renan22rsw@gmail.com> 1737732126 -0300	commit: feat: anime page
+130d7ae3e2fffec3e64d3693759be43ec7caf088 4eb69e76d57d67d48ad802360b3c90e31ae3ea09 Renan Victor <renan22rsw@gmail.com> 1737757808 -0300	commit: feat: Manga page
+4eb69e76d57d67d48ad802360b3c90e31ae3ea09 b7f1c2916211012d36d5b154da1e723e18a619c2 Renan Victor <renan22rsw@gmail.com> 1737805781 -0300	commit: feat: characters hooks
+b7f1c2916211012d36d5b154da1e723e18a619c2 b7f1c2916211012d36d5b154da1e723e18a619c2 Renan Victor <renan22rsw@gmail.com> 1737806377 -0300	checkout: moving from consuming-anilist-api to proxy-test
+b7f1c2916211012d36d5b154da1e723e18a619c2 b7f1c2916211012d36d5b154da1e723e18a619c2 Renan Victor <renan22rsw@gmail.com> 1737806799 -0300	checkout: moving from proxy-test to consuming-anilist-api
+b7f1c2916211012d36d5b154da1e723e18a619c2 b7f1c2916211012d36d5b154da1e723e18a619c2 Renan Victor <renan22rsw@gmail.com> 1737807016 -0300	checkout: moving from consuming-anilist-api to proxy
+b7f1c2916211012d36d5b154da1e723e18a619c2 b7f1c2916211012d36d5b154da1e723e18a619c2 Renan Victor <renan22rsw@gmail.com> 1737807207 -0300	checkout: moving from proxy to consuming-anilist-api
+b7f1c2916211012d36d5b154da1e723e18a619c2 5067aba5635954da5a2ddaad65013e4d721c562e Renan Victor <renan22rsw@gmail.com> 1737810389 -0300	commit: feat: Staffs hooks
+5067aba5635954da5a2ddaad65013e4d721c562e ef23f8043c74616d1563ba8a9c3a7069ff61d263 Renan Victor <renan22rsw@gmail.com> 1737810405 -0300	commit: feat: staff main page
+ef23f8043c74616d1563ba8a9c3a7069ff61d263 e56273baff8c220679913113e87af08f9bfdc40d Renan Victor <renan22rsw@gmail.com> 1738095478 -0300	commit: feat: anime id page preview
+e56273baff8c220679913113e87af08f9bfdc40d ae1519637b92c624bdb2c2230b07c059b82f6505 Renan Victor <renan22rsw@gmail.com> 1738109290 -0300	commit: fix: cors problem
+ae1519637b92c624bdb2c2230b07c059b82f6505 a2e575b6d322c794585617ba35f002a5b56b1b1d Renan Victor <renan22rsw@gmail.com> 1738109312 -0300	commit: feat: manga by id page preview
+a2e575b6d322c794585617ba35f002a5b56b1b1d 263584efc318c069fd8513caadc74ef39b0f043b Renan Victor <renan22rsw@gmail.com> 1738188352 -0300	commit: feat: character by id page
+263584efc318c069fd8513caadc74ef39b0f043b 52f75fba50df7f15810bb882f9af10ae370e6f5e Renan Victor <renan22rsw@gmail.com> 1738188383 -0300	commit: feat: staff by id page
+52f75fba50df7f15810bb882f9af10ae370e6f5e c284e32860c3ce767894be3485dc789511f8be38 Renan Victor <renan22rsw@gmail.com> 1738188419 -0300	commit: fix: ajuding headers page
+c284e32860c3ce767894be3485dc789511f8be38 0f7cccfc94aad17fa356032f367e152c4c27b8d3 Renan Victor <renan22rsw@gmail.com> 1738273885 -0300	commit: feat: sub pages for anime by id page
+0f7cccfc94aad17fa356032f367e152c4c27b8d3 78115c9a072e16c22fa68e5efa098c7a11a6c9d2 Renan Victor <renan22rsw@gmail.com> 1738273925 -0300	commit: feat: sub pages for manga by id page
+78115c9a072e16c22fa68e5efa098c7a11a6c9d2 509b0163b2d1daa0c069fe85742c939658752120 Renan Victor <renan22rsw@gmail.com> 1738273947 -0300	commit: fix: media query bug
+509b0163b2d1daa0c069fe85742c939658752120 f30c635ab9b96f9556b9d1f10d3699e423268c79 Renan Victor <renan22rsw@gmail.com> 1738434066 -0300	commit: feat: animes and mangas view all pages
+f30c635ab9b96f9556b9d1f10d3699e423268c79 4d3a1360c7fdbf47ffab69910900c868ff768028 Renan Victor <renan22rsw@gmail.com> 1738437266 -0300	checkout: moving from consuming-anilist-api to main
+4d3a1360c7fdbf47ffab69910900c868ff768028 f30c635ab9b96f9556b9d1f10d3699e423268c79 Renan Victor <renan22rsw@gmail.com> 1738437339 -0300	checkout: moving from main to consuming-anilist-api
+f30c635ab9b96f9556b9d1f10d3699e423268c79 bd52efaa30cc3593bf34efc731a1c823ddc24b6a Renan Victor <renan22rsw@gmail.com> 1738450577 -0300	commit: feat: Reset button values
+bd52efaa30cc3593bf34efc731a1c823ddc24b6a 09393352a829f4caadc2bdb39daa1a2a1b0e68bc Renan Victor <renan22rsw@gmail.com> 1738678725 -0300	commit: feat: signup and login pages
+09393352a829f4caadc2bdb39daa1a2a1b0e68bc 09393352a829f4caadc2bdb39daa1a2a1b0e68bc Renan Victor <renan22rsw@gmail.com> 1738678823 -0300	checkout: moving from consuming-anilist-api to auth-js
+09393352a829f4caadc2bdb39daa1a2a1b0e68bc 044c7d124be01d5e7d83b3355ba6d05293d9201d Renan Victor <renan22rsw@gmail.com> 1738724766 -0300	commit: feat: authentication system preview
+044c7d124be01d5e7d83b3355ba6d05293d9201d 009399bb11b5e6937d77086e421cdb93157ac81f Renan Victor <renan22rsw@gmail.com> 1738783556 -0300	commit: feat: authConfig
+009399bb11b5e6937d77086e421cdb93157ac81f 30fa560f7226bc00750364ffc789ef29d5480dc2 Renan Victor <renan22rsw@gmail.com> 1738853290 -0300	commit: feat: resend email feature
+30fa560f7226bc00750364ffc789ef29d5480dc2 dce75f2d37c89dc2241f8dd9a6a216eb1175aecd Renan Victor <renan22rsw@gmail.com> 1739214287 -0300	commit: feat: profile page layout
+dce75f2d37c89dc2241f8dd9a6a216eb1175aecd 4e7cd7ed3d4b49f30e0a84cf7412d41ffc691a9c Renan Victor <renan22rsw@gmail.com> 1739242943 -0300	commit: feat: profile page and some components add anime and mangas to list
+4e7cd7ed3d4b49f30e0a84cf7412d41ffc691a9c 6e904b19c7b6963f3077942b61c09f319eedcae2 Renan Victor <renan22rsw@gmail.com> 1739312023 -0300	commit: feat: removing verify email action
+6e904b19c7b6963f3077942b61c09f319eedcae2 2ede214f797507f40f7d592aff80725e36032b7c Renan Victor <renan22rsw@gmail.com> 1739314006 -0300	commit: fix: import bug
+2ede214f797507f40f7d592aff80725e36032b7c 356c6a746c1cf2d7326203cea2ccba5bdf70bcc7 Renan Victor <renan22rsw@gmail.com> 1739320596 -0300	commit: feat: favorites page layout
+356c6a746c1cf2d7326203cea2ccba5bdf70bcc7 f7b0147342e44922e0283fca07a7a59805797b1a Renan Victor <renan22rsw@gmail.com> 1739403539 -0300	commit: feat: action to add characters and staffs to the favorites page
+f7b0147342e44922e0283fca07a7a59805797b1a c2d6809381213e6b94f52d4bb80b249cf398387c Renan Victor <renan22rsw@gmail.com> 1739423788 -0300	commit: feat: improving component's folders structure
+c2d6809381213e6b94f52d4bb80b249cf398387c 4d3a1360c7fdbf47ffab69910900c868ff768028 Renan Victor <renan22rsw@gmail.com> 1739423800 -0300	checkout: moving from auth-js to main
+4d3a1360c7fdbf47ffab69910900c868ff768028 09393352a829f4caadc2bdb39daa1a2a1b0e68bc Renan Victor <renan22rsw@gmail.com> 1739423899 -0300	checkout: moving from main to consuming-anilist-api
+09393352a829f4caadc2bdb39daa1a2a1b0e68bc c2d6809381213e6b94f52d4bb80b249cf398387c Renan Victor <renan22rsw@gmail.com> 1739423995 -0300	checkout: moving from consuming-anilist-api to auth-js
+c2d6809381213e6b94f52d4bb80b249cf398387c 616cf01611a3879dd3e10d7238f56159484ded51 Renan Victor <renan22rsw@gmail.com> 1739560185 -0300	commit: feat: action for deleting datas from lists
+616cf01611a3879dd3e10d7238f56159484ded51 0d2697fdbe1ec24e559b74db85475daefa27528f Renan Victor <renan22rsw@gmail.com> 1739575922 -0300	commit: feat: profile info component and actions for getting datas length
+0d2697fdbe1ec24e559b74db85475daefa27528f 74ec26f32bdfdffb84655c9dc0a3e3a5a49398f1 Renan Victor <renan22rsw@gmail.com> 1739662272 -0300	commit: feat: service's folder
+74ec26f32bdfdffb84655c9dc0a3e3a5a49398f1 a731282e7a2641ea155697081aff634f9208a6cb Renan Victor <renan22rsw@gmail.com> 1739663790 -0300	commit: feat: theming mode
+a731282e7a2641ea155697081aff634f9208a6cb 49c85ca23a493f93b33889e0b19662f0c553885c Renan Victor <renan22rsw@gmail.com> 1739770893 -0300	commit: feat: home page
+49c85ca23a493f93b33889e0b19662f0c553885c 4d3a1360c7fdbf47ffab69910900c868ff768028 Renan Victor <renan22rsw@gmail.com> 1739770902 -0300	checkout: moving from auth-js to main
+4d3a1360c7fdbf47ffab69910900c868ff768028 09393352a829f4caadc2bdb39daa1a2a1b0e68bc Renan Victor <renan22rsw@gmail.com> 1739771094 -0300	merge consuming-anilist-api: Fast-forward
+09393352a829f4caadc2bdb39daa1a2a1b0e68bc 09393352a829f4caadc2bdb39daa1a2a1b0e68bc Renan Victor <renan22rsw@gmail.com> 1739771167 -0300	checkout: moving from main to consuming-anilist-api
+09393352a829f4caadc2bdb39daa1a2a1b0e68bc 09393352a829f4caadc2bdb39daa1a2a1b0e68bc Renan Victor <renan22rsw@gmail.com> 1739771227 -0300	checkout: moving from consuming-anilist-api to main
+09393352a829f4caadc2bdb39daa1a2a1b0e68bc 49c85ca23a493f93b33889e0b19662f0c553885c Renan Victor <renan22rsw@gmail.com> 1739771259 -0300	checkout: moving from main to auth-js
+49c85ca23a493f93b33889e0b19662f0c553885c d1a8e02d00795ee9a6f27f0803eb6005adfd23a1 Renan Victor <renan22rsw@gmail.com> 1739843168 -0300	commit: feat: setings page layout
+d1a8e02d00795ee9a6f27f0803eb6005adfd23a1 81bb913efd23ffc6d747dba8969896470f7f54c5 Renan Victor <renan22rsw@gmail.com> 1739850978 -0300	commit: feat: server actions for settings page
+81bb913efd23ffc6d747dba8969896470f7f54c5 09393352a829f4caadc2bdb39daa1a2a1b0e68bc Renan Victor <renan22rsw@gmail.com> 1739851207 -0300	checkout: moving from auth-js to main
+09393352a829f4caadc2bdb39daa1a2a1b0e68bc 81bb913efd23ffc6d747dba8969896470f7f54c5 Renan Victor <renan22rsw@gmail.com> 1739851259 -0300	merge auth-js: Fast-forward
+81bb913efd23ffc6d747dba8969896470f7f54c5 81bb913efd23ffc6d747dba8969896470f7f54c5 Renan Victor <renan22rsw@gmail.com> 1739921530 -0300	checkout: moving from main to auth-js
+81bb913efd23ffc6d747dba8969896470f7f54c5 81bb913efd23ffc6d747dba8969896470f7f54c5 Renan Victor <renan22rsw@gmail.com> 1739921649 -0300	checkout: moving from auth-js to main
+                                                                                                                                                                                                    
