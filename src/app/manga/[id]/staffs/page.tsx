@@ -10,7 +10,7 @@ import { getMangaByIdResponse } from "@/types/mangas/manga-by-id";
 
 interface StaffsFromMangaByIdPageProps {
   params: {
-    id: number;
+    id: string;
   };
 }
 
@@ -49,6 +49,7 @@ const StaffsFromMangaByIdPage = async ({
     return (
       <>
         <Header
+          id={id}
           title={title.romaji}
           headerImage={coverImage.extraLarge}
           bannerImage={bannerImage}
