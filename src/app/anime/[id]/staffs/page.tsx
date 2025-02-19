@@ -10,7 +10,7 @@ import { getAnimeByIdResponse } from "@/types/animes/anime-by-id";
 
 interface CharactersFromAnimeByidPageProps {
   params: {
-    id: number;
+    id: string;
   };
 }
 
@@ -53,6 +53,7 @@ const StaffsFromAnimeByidPage = async ({
     return (
       <>
         <Header
+          id={id}
           title={title.romaji}
           bannerImage={bannerImage}
           headerImage={coverImage.extraLarge}
