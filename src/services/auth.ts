@@ -30,7 +30,16 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const email = user?.email;
         const existingUser = await getUserEmail(email as string);
 
-        if (!existingUser) {
+        if (existingUser) {
+          await prisma.user.update({
+            where: {
+              id: existingUser.id,
+            },
+            data: {
+              id: user.id as string,
+            },
+          });
+        } else {
           await prisma.user.create({
             data: {
               id: user.id as string,
