@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#040506] p-4 text-white">
+    <footer className="bg-[#EAEAF0] p-4 dark:bg-[#040506]">
       <div className="flex items-center space-x-2">
         <Image src={AnimoonIcon} alt="Animoon-Icon" width={32} height={32} />
         <h3 className="text-xl font-semibold">Animoon</h3>

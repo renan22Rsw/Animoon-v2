@@ -6,7 +6,6 @@ import SearchTitle from "../../_components/title";
 import AnimeMangaContents from "../../_components/anime-manga-contents";
 import usePopularNextSeasonAnimes from "@/hooks/animes/usePopularNextSeasonAnimes";
 
-
 const PopularThisSeasonContent = () => {
   const currentYear = new Date().getFullYear();
   const { nextSeason, nextSeasonLoading, nextSeasonError } =

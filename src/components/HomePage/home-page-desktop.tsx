@@ -12,7 +12,7 @@ const HomePageDesktop = () => {
         </h1>
         <Link href={"/search/anime"}>
           <Button
-            className="mt-4 bg-yellow-500 text-xl font-semibold"
+            className="mt-4 bg-yellow-500 text-lg font-semibold"
             variant={"outline"}
           >
             Get Started

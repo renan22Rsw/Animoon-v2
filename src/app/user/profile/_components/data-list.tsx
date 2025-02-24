@@ -64,43 +64,51 @@ const DataList = ({ datas, path }: DataListProps) => {
   };
 
   return (
-    <main className="px-4">
-      <div className="mx-auto my-4 max-w-[1000px] rounded-md">
-        <div className="flex justify-between">
-          <h3 className="p-4 font-bold">Title</h3>
-          <h3 className="p-4 font-bold">Delete</h3>
-        </div>
-        {datas.map(({ id, animeId, mangaId, title, image }) => (
-          <div
-            className="flex justify-between bg-[#eaeaf0] py-2 duration-200 ease-in-out hover:bg-[#836ea0] dark:bg-[#0e0e14] hover:dark:bg-[#464367]"
-            key={id}
-          >
-            <span className="mx-2 flex space-x-2">
-              <Image
-                src={image as string}
-                alt="data-list-image"
-                width={50}
-                height={50}
-                style={{ width: "auto", height: "auto" }}
-              />
-              <Link href={`/${path}/${animeId ? animeId : mangaId}`}>
-                <h4>{title}</h4>
-              </Link>
-            </span>
-            <div className="flex cursor-pointer items-center px-4">
-              <FaTrashAlt
-                size={20}
-                onClick={() =>
-                  pathName === "anime-list"
-                    ? handleDeleteAnimes(id)
-                    : handleDeleteMangas(id)
-                }
-              />
+    <>
+      {datas.length > 0 ? (
+        <main className="px-4">
+          <div className="mx-auto my-4 max-w-[1000px] rounded-md">
+            <div className="flex justify-between">
+              <h3 className="p-4 font-bold">Title</h3>
+              <h3 className="p-4 font-bold">Delete</h3>
             </div>
+            {datas.map(({ id, animeId, mangaId, title, image }) => (
+              <div
+                className="flex justify-between bg-[#eaeaf0] py-2 duration-200 ease-in-out hover:bg-[#836ea0] dark:bg-[#0e0e14] hover:dark:bg-[#464367]"
+                key={id}
+              >
+                <span className="mx-2 flex space-x-2">
+                  <Image
+                    src={image as string}
+                    alt="data-list-image"
+                    width={50}
+                    height={50}
+                    style={{ width: "auto", height: "auto" }}
+                  />
+                  <Link href={`/${path}/${animeId ? animeId : mangaId}`}>
+                    <h4>{title}</h4>
+                  </Link>
+                </span>
+                <div className="flex cursor-pointer items-center px-4">
+                  <FaTrashAlt
+                    size={20}
+                    onClick={() =>
+                      pathName === "anime-list"
+                        ? handleDeleteAnimes(id)
+                        : handleDeleteMangas(id)
+                    }
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </main>
+        </main>
+      ) : (
+        <div className="flex h-[200px] items-center justify-center">
+          <h1 className="p-4 font-bold">No {path} has been added yet</h1>
+        </div>
+      )}
+    </>
   );
 };
 
