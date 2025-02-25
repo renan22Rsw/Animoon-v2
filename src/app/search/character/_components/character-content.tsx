@@ -1,12 +1,12 @@
 "use client";
 
-import useCharactersBirthdays from "@/hooks/characters/useCharactersBirthdays";
+import useCharactersBirthdays from "@/hooks/characters_hooks/useCharactersBirthdays";
 import SearchTitle from "../../_components/title";
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 import CharacterStaffContent from "../../_components/character-staff-content";
-import useMostFavoritesCharacters from "@/hooks/characters/useMostFavoritesCharacters";
-import useSearchCharacters from "@/hooks/characters/useSearchCharacters";
+import useMostFavoritesCharacters from "@/hooks/characters_hooks/useMostFavoritesCharacters";
+import useSearchCharacters from "@/hooks/characters_hooks/useSearchCharacters";
 import { useSearchParams } from "next/navigation";
 
 const CharacterContent = () => {

@@ -3,9 +3,9 @@
 import { useSearchParams } from "next/navigation";
 import SearchTitle from "../../_components/title";
 import CharacterStaffContent from "../../_components/character-staff-content";
-import useStaffsBirthdays from "@/hooks/staffs/useStaffsBirthdays";
-import useMostFavoritesStaffs from "@/hooks/staffs/useMostFavoritesStaffs";
-import useSearchStaffs from "@/hooks/staffs/useSearchStaffs";
+import useStaffsBirthdays from "@/hooks/staffs_hooks/useStaffsBirthdays";
+import useMostFavoritesStaffs from "@/hooks/staffs_hooks/useMostFavoritesStaffs";
+import useSearchStaffs from "@/hooks/staffs_hooks/useSearchStaffs";
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import UseTop10Mangas from "@/hooks/mangas/useTop10Mangas";
+import UseTop10Mangas from "@/hooks/mangas_hooks/useTop10Mangas";
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 import SearchTitle from "../../_components/title";

@@ -1,6 +1,6 @@
 "use client";
 
-import useTrendingMangas from "@/hooks/mangas/useTrendingMangas";
+import useTrendingMangas from "@/hooks/mangas_hooks/useTrendingMangas";
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 import SearchTitle from "../../_components/title";

@@ -8,13 +8,13 @@ import SearchTitle from "../../_components/title";
 import { Loading } from "../../_components/loading";
 
 import ApiNotWorking from "../../_components/api-is-not-working";
-import useTrendingMangas from "@/hooks/mangas/useTrendingMangas";
-import usePopularMangas from "@/hooks/mangas/usePopularMangas";
-import useLightNovel from "@/hooks/mangas/useLightNovel";
-import UseTop10Mangas from "@/hooks/mangas/useTop10Mangas";
-import useSearchMangas from "@/hooks/mangas/useSearchMangas";
-import useGenreMangas from "@/hooks/mangas/useGenreMangas";
-import useSearchAndGenreMangas from "@/hooks/mangas/useSearchAndGenreMangas";
+import useTrendingMangas from "@/hooks/mangas_hooks/useTrendingMangas";
+import usePopularMangas from "@/hooks/mangas_hooks/usePopularMangas";
+import useLightNovel from "@/hooks/mangas_hooks/useLightNovel";
+import UseTop10Mangas from "@/hooks/mangas_hooks/useTop10Mangas";
+import useSearchMangas from "@/hooks/mangas_hooks/useSearchMangas";
+import useGenreMangas from "@/hooks/mangas_hooks/useGenreMangas";
+import useSearchAndGenreMangas from "@/hooks/mangas_hooks/useSearchAndGenreMangas";
 import AnimeMangaContents from "../../_components/anime-manga-contents";
 
 const MangaContent = () => {

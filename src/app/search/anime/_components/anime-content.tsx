@@ -9,14 +9,14 @@ import { useSearchParams } from "next/navigation";
 
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
-import useGenreAnimes from "@/hooks/animes/useGenreAnimes";
-import usePopularAnimes from "@/hooks/animes/usePopularAnimes";
-import usePopularNextSeasonAnimes from "@/hooks/animes/usePopularNextSeasonAnimes";
-import useSearchAndGenreAnimes from "@/hooks/animes/useSearchAndGenreAnimes";
-import useTop10Animes from "@/hooks/animes/useTop10Animes";
-import useTrendingAnimes from "@/hooks/animes/useTrendingAnimes";
-import useUpcomingAnimes from "@/hooks/animes/useUpcomingAnimes";
-import useSearchAnime from "@/hooks/animes/useSearchAnime";
+import useGenreAnimes from "@/hooks/animes_hooks/useGenreAnimes";
+import usePopularAnimes from "@/hooks/animes_hooks/usePopularAnimes";
+import usePopularNextSeasonAnimes from "@/hooks/animes_hooks/usePopularNextSeasonAnimes";
+import useSearchAndGenreAnimes from "@/hooks/animes_hooks/useSearchAndGenreAnimes";
+import useSearchAnime from "@/hooks/animes_hooks/useSearchAnime";
+import useTop10Animes from "@/hooks/animes_hooks/useTop10Animes";
+import useTrendingAnimes from "@/hooks/animes_hooks/useTrendingAnimes";
+import useUpcomingAnimes from "@/hooks/animes_hooks/useUpcomingAnimes";
 
 const AnimeContent = () => {
   const currentYear = new Date().getFullYear();

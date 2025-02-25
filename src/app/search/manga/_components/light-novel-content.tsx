@@ -1,6 +1,6 @@
 "use client";
 
-import useLightNovel from "@/hooks/mangas/useLightNovel";
+import useLightNovel from "@/hooks/mangas_hooks/useLightNovel";
 import { Loading } from "../../_components/loading";
 import ApiNotWorking from "../../_components/api-is-not-working";
 import SearchTitle from "../../_components/title";
