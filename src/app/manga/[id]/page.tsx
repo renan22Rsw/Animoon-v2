@@ -14,9 +14,7 @@ import { getMangaByIdResponse } from "@/types/mangas/manga-by-id";
 import Link from "next/link";
 
 interface MangasProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 const Manga = async ({ params }: MangasProps) => {

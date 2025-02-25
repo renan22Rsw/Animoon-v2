@@ -9,9 +9,7 @@ import { GET_MANGA_BY_ID } from "@/queries/mangas/manga-by-id";
 import { getMangaByIdResponse } from "@/types/mangas/manga-by-id";
 
 interface StaffsFromMangaByIdPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 const StaffsFromMangaByIdPage = async ({

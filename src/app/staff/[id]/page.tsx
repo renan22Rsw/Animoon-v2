@@ -4,9 +4,7 @@ import { GET_STAFF_BY_ID } from "@/queries/staffs/staff-by-id";
 import { StaffByIdResponse } from "@/types/staffs/staff-by-id";
 
 interface StaffProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 const Staff = async ({ params }: StaffProps) => {
@@ -45,7 +43,7 @@ const Staff = async ({ params }: StaffProps) => {
           alternative: [],
         }}
         image={image.large}
-        description={description.replace(/[^a-zA-Z ]/g, "")}
+        description={description ? description.replace(/[^a-zA-Z ]/g, "") : ""}
         gender={gender}
         age={age}
         bloodType={bloodType}

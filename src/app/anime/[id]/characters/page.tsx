@@ -8,11 +8,9 @@ import { getClient } from "@/lib/ApolloClient";
 import { GET_ANIME_BY_ID } from "@/queries/animes/anime-by-id";
 import { getAnimeByIdResponse } from "@/types/animes/anime-by-id";
 
-interface CharactersFromAnimeByidPageProps {
-  params: {
-    id: string;
-  };
-}
+type CharactersFromAnimeByidPageProps = {
+  params: Promise<{ id: string }>;
+};
 
 const CharactersFromAnimeByidPage = async ({
   params,

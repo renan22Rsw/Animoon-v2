@@ -14,11 +14,9 @@ import { getAnimeByIdResponse } from "@/types/animes/anime-by-id";
 import { GET_ANIME_BY_ID } from "@/queries/animes/anime-by-id";
 import Link from "next/link";
 
-interface AnimePageIdProps {
-  params: {
-    id: string;
-  };
-}
+type AnimePageIdProps = {
+  params: Promise<{ id: string }>;
+};
 
 const AnimePageId = async ({ params }: AnimePageIdProps) => {
   const { id } = await params;
