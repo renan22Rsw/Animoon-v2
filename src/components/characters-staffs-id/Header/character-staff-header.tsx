@@ -98,7 +98,7 @@ export const CharacterOrStaffHeader = ({
 
   return (
     <header className="h-[150px] w-full bg-[#eaeaf0] dark:bg-[#0e0e14]">
-      <section className="mx-14 flex py-8">
+      <section className="mx-auto flex max-w-[1200px] py-8">
         <div className="flex flex-col items-center space-y-4">
           <Image
             src={image}

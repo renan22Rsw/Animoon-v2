@@ -79,8 +79,8 @@ export const AnimeMangaHeader = ({
   };
 
   return (
-    <div className="absolute bottom-0 mx-auto flex justify-center xl:w-[88%] 2xl:w-3/5">
-      <div className="mx-6 space-y-4 p-2">
+    <div className="absolute bottom-0 mx-auto flex justify-center xl:w-[95%] 2xl:w-[85%]">
+      <div className="flex flex-col items-center space-y-4 p-2">
         <Image
           src={headerImage as string}
           alt="hearder-picture"
@@ -94,7 +94,7 @@ export const AnimeMangaHeader = ({
           onClick={
             pathName === "anime" ? handleAddAnimeToList : handleAddMangaToList
           }
-          className="w-full bg-[#9494bc] dark:bg-[#42426a]"
+          className="w-4/5 bg-[#9494bc] dark:bg-[#42426a]"
         >
           Add To List
         </Button>

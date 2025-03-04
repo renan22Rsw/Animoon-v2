@@ -26,8 +26,8 @@ const InfoColumns = ({
   source,
 }: InfoColumnsProps) => {
   return (
-    <div className="hidden h-[600px] justify-end sm:flex xl:w-1/4 2xl:w-5/12">
-      <div className="m-2 w-[160px] rounded-md bg-[#eaeaf0] p-2 dark:bg-[#0e0e14]">
+    <div className="hidden h-[600px] justify-end sm:flex xl:w-1/4 2xl:w-[25%]">
+      <div className="m-2 w-[200px] rounded-md bg-[#eaeaf0] p-4 dark:bg-[#0e0e14]">
         <div className="space-y-1 text-xs">
           <h5 className="font-bold">Format</h5>
           <p className="font-thin">{format}</p>
